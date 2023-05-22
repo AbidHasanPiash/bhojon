@@ -25,3 +25,17 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+circle{
+  /* stroke: url(#GradientColor);
+  fill: none ;
+  stroke-width: 20px;
+  stroke-dasharray: 472;
+  stroke-dashoffset: 472;
+  animation: anim 2s linear forwards; */
+}
+@keyframes anim {
+  100%{
+    stroke-dashoffset: 100;
+  }
+}
