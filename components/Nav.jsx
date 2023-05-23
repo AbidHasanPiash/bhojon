@@ -7,13 +7,13 @@ export default function nav() {
       <div>
         <div className="-mx-6 px-6 py-4">
           <Link href="#" title="home">
-            <h1 className="w-32 text-3xl">Bhojon.</h1>
+            <h1 className="w-32 text-3xl text-gray-200">Bhojon.</h1>
           </Link>
         </div>
 
         <div className="mt-8 text-center">
           <Image
-            src="vercel.svg" width={30} height={30}
+            src="/images/user.jpg" width={100} height={100}
             alt=""
             className="m-auto h-10 w-10 rounded-full object-cover lg:h-28 lg:w-28"
           />
