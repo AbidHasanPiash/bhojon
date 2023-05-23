@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function CirclePercentage({ value }) {
-    const percentage = (value * 500)/100;
+    const percentage = (value * 5);
   return (
     <div className="w-[160px] h-[160px] relative flex items-center justify-center">
       <div className="text-5xl font-bold text-gray-900 dark:text-gray-100">{value}%</div>
