@@ -61,7 +61,8 @@ export default function nav() {
                 href={item.link}
                 onClick={()=>setSidebarOpen(false)}
                 aria-label="dashboard"
-                className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300 active:bg-gradient-to-r from-sky-600 to-fuchsia-400"
+                className={`group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300 
+                  ${activeItem === item.link ? 'bg-gradient-to-r from-sky-600 to-fuchsia-400':' hover:bg-black/10'}`}
               >
                 {item.icon}
                 <span className="group-hover:text-gray-700 dark:group-hover:text-gray-50">{item.name}</span>
