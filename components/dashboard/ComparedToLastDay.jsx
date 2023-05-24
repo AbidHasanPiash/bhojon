@@ -9,21 +9,21 @@ export default function ComparedToLastDay() {
     labels: ["10", "12", "14", "16", "18", "20", "22", "24"],
     datasets: [
       {
+        label: "Today",
+        data: [1, 5, 8, 6, 4, 6, 4, 4],
+        fill: false,
+        borderColor: "rgb(217 70 239)",
+        pointBorderColor: "rgb(217 70 239)",
+        pointBorderWidth: 2,
+        tension: 0.5
+      },
+      {
         label: "Tomorrow",
         data: [1, 2, 3, 5, 5, 7, 5, 3],
         fill: true,
         backgroundColor: "transparent",
         borderColor: "rgb(56 189 248)",
         pointBorderColor: "rgb(56 189 248)",
-        pointBorderWidth: 2,
-        tension: 0.5
-      },
-      {
-        label: "Today",
-        data: [1, 5, 8, 6, 4, 6, 4, 4],
-        fill: false,
-        borderColor: "rgb(217 70 239)",
-        pointBorderColor: "rgb(217 70 239)",
         pointBorderWidth: 2,
         tension: 0.5
       }

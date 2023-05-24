@@ -1,7 +1,10 @@
+'use client'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Nav from '@/components/Nav'
 import Header from '@/components/Header'
+import { SidebarContext } from '@/context/SidebarContext'
+import { useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,14 +14,17 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
   return (
     <html lang="en">
       <body className={`${inter.className} bg-gray-100 dark:bg-gray-900`}>
-        <Nav/>
-        <div className="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
-          <Header/>
-          {children}
-        </div>
+      <SidebarContext.Provider value={{isSidebarOpen, setSidebarOpen}}>
+          <Nav/>
+          <div className="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
+            <Header/>
+            {children}
+          </div>
+        </SidebarContext.Provider>
       </body>
     </html>
   )

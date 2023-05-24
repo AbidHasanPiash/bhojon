@@ -1,14 +1,25 @@
+'use client'
+import {useContext} from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { SidebarContext } from '@/context/SidebarContext'
 
 export default function nav() {
+  const {isSidebarOpen, setSidebarOpen} = useContext(SidebarContext);
   return (
-    <nav  className="fixed top-0 z-10 ml-[-100%] flex h-screen w-full flex-col justify-between border-r bg-white px-6 pb-3 transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] dark:bg-gray-800 dark:border-gray-700">
+    <nav className={`fixed top-0 z-10 ${isSidebarOpen?'ml-[0%]':'ml-[-100%]'} flex h-screen w-full flex-col justify-between border-r bg-white px-6 pb-3 transition-all duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] dark:bg-gray-800 dark:border-gray-700`}>
       <div>
-        <div className="-mx-6 px-6 py-4">
+        <div className="-mx-6 px-6 py-4 flex justify-between">
           <Link href="#" title="home">
             <h1 className="w-32 text-3xl text-gray-200">Bhojon.</h1>
           </Link>
+          <button
+            onClick={()=>setSidebarOpen((p)=>!p)}
+            aria-label="Close Nav"
+            className="h-10 w-10 rounded-xl border md:hidden text-gray-900 dark:text-gray-200 bg-gray-100 active:bg-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:active:bg-gray-800"
+          >
+            X
+          </button>
         </div>
 
         <div className="mt-8 text-center">
