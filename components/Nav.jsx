@@ -46,8 +46,8 @@ export default function nav() {
 
         <div className="mt-8 text-center">
           <Image
-            src="/images/user.jpg" width={100} height={100}
-            alt=""
+            src="/images/user.jpg" width={100} height={100} priority
+            alt="user"
             className="m-auto h-20 w-20 rounded-full object-cover lg:h-28 lg:w-28"
           />
           <h5 className="mt-4 hidden text-xl font-semibold text-gray-600 lg:block dark:text-gray-300">Cynthia J. Watts</h5>

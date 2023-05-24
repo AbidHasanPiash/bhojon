@@ -3,9 +3,9 @@ export default function MenuSVG() {
     <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
       <path
         className="fill-current text-gray-300 group-hover:text-cyan-300"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M2 6a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1H8a3 3 0 00-3 3v1.5a1.5 1.5 0 01-3 0V6z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
       <path
         className="fill-current text-gray-600 group-hover:text-cyan-600 dark:group-hover:text-sky-400"

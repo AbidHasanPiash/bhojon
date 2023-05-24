@@ -32,7 +32,7 @@ export default function CircleAnimation({ dashOffsetValue }) {
                 cx="80" 
                 cy="80" 
                 r="70" 
-                stroke-linecap="round" />
+                strokeLinecap="round" />
           </svg>
         </div>
         <CirclePercentage value={50}/>
