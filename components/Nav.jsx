@@ -1,5 +1,6 @@
 'use client'
-import {useContext} from 'react'
+import {useContext, useEffect, useState} from 'react'
+import { usePathname  } from 'next/navigation';
 import Image from 'next/image'
 import Link from 'next/link'
 import { SidebarContext } from '@/context/SidebarContext'
@@ -15,6 +16,18 @@ import EmployeeSVG from './svg/EmployeeSVG'
 
 export default function nav() {
   const {isSidebarOpen, setSidebarOpen} = useContext(SidebarContext);
+  const path = usePathname();
+  const [activeItem, setActiveItem] = useState(path);
+  useEffect(()=>{
+      setActiveItem(path);
+  },[path]);
+  const menuItem = [
+    {name:'Dashboard', link: '/', icon: <DashboardSVG/>},
+    {name:'Menu', link: '/menu', icon: <MenuSVG/>},
+    {name:'Order', link: '/order', icon: <OrderSVG/>},
+    {name:'Finance', link: '/finance', icon: <FinanceSVG/>},
+    {name:'Employee', link: '/employee', icon: <EmployeeSVG/>}
+  ]
   return (
     <nav className={`fixed top-0 z-10 ${isSidebarOpen?'ml-[0%]':'ml-[-100%]'} flex h-screen w-full flex-col justify-between border-r bg-white px-6 pb-3 transition-all duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] dark:bg-gray-800 dark:border-gray-700`}>
       <div>
@@ -42,52 +55,19 @@ export default function nav() {
         </div>
 
         <ul className="mt-8 space-y-2 tracking-wide">
-          <li>
-            <Link
-              href="#"
-              aria-label="dashboard"
-              className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300 active:bg-gradient-to-r from-sky-600 to-cyan-400"
-            >
-              <DashboardSVG/>
-              <span className="group-hover:text-gray-700 dark:group-hover:text-gray-50">Dashboard</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300 active:bg-gradient-to-r from-sky-600 to-cyan-400"
-            >
-              <MenuSVG/>
-              <span className="group-hover:text-gray-700 dark:group-hover:text-gray-50">Menu</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300 active:bg-gradient-to-r from-sky-600 to-cyan-400"
-            >
-              <OrderSVG/>
-              <span className="group-hover:text-gray-700 dark:group-hover:text-gray-50">Order</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300 active:bg-gradient-to-r from-sky-600 to-cyan-400"
-            >
-              <FinanceSVG/>
-              <span className="group-hover:text-gray-700 dark:group-hover:text-gray-50">Finance</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300 active:bg-gradient-to-r from-sky-600 to-cyan-400"
-            >
-              <EmployeeSVG/>
-              <span className="group-hover:text-gray-700 dark:group-hover:text-white">Employee</span>
-            </Link>
-          </li>
+          {menuItem.map((item, i)=>(
+            <li key={i}>
+              <Link
+                href={item.link}
+                onClick={()=>setSidebarOpen(false)}
+                aria-label="dashboard"
+                className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300 active:bg-gradient-to-r from-sky-600 to-fuchsia-400"
+              >
+                {item.icon}
+                <span className="group-hover:text-gray-700 dark:group-hover:text-gray-50">{item.name}</span>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
 
