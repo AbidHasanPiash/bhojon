@@ -16,8 +16,8 @@ export default function CirclePercentage({ value }) {
         />
         <defs>
           <linearGradient id="purpleGradient" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#E323FF" />
-            <stop offset="1" stop-color="#7517F8" />
+            <stop stopColor="#E323FF" />
+            <stop offset="1" stopColor="#7517F8" />
           </linearGradient>
         </defs>
       </svg>

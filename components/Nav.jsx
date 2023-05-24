@@ -4,6 +4,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { SidebarContext } from '@/context/SidebarContext'
 
+// React Icons
+import {HiOutlineLogout} from 'react-icons/hi'
+import {ImCross} from 'react-icons/im'
+
 export default function nav() {
   const {isSidebarOpen, setSidebarOpen} = useContext(SidebarContext);
   return (
@@ -16,9 +20,9 @@ export default function nav() {
           <button
             onClick={()=>setSidebarOpen((p)=>!p)}
             aria-label="Close Nav"
-            className="h-10 w-10 rounded-xl border md:hidden text-gray-900 dark:text-gray-200 bg-gray-100 active:bg-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:active:bg-gray-800"
+            className="h-10 w-10 flex items-center justify-center rounded-xl border lg:hidden text-gray-900 dark:text-gray-200 bg-gray-100 active:bg-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:active:bg-gray-800"
           >
-            X
+            <ImCross/>
           </button>
         </div>
 
@@ -26,7 +30,7 @@ export default function nav() {
           <Image
             src="/images/user.jpg" width={100} height={100}
             alt=""
-            className="m-auto h-10 w-10 rounded-full object-cover lg:h-28 lg:w-28"
+            className="m-auto h-20 w-20 rounded-full object-cover lg:h-28 lg:w-28"
           />
           <h5 className="mt-4 hidden text-xl font-semibold text-gray-600 lg:block dark:text-gray-300">Cynthia J. Watts</h5>
           <span className="hidden text-gray-400 lg:block">Admin</span>
@@ -159,20 +163,7 @@ export default function nav() {
 
       <div className="-mx-6 flex items-center justify-between border-t px-6 pt-4 dark:border-gray-700">
         <button className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-            />
-          </svg>
+          <span className="group-hover:text-gray-700 dark:group-hover:text-white"><HiOutlineLogout size={22}/></span>
           <span className="group-hover:text-gray-700 dark:group-hover:text-white">Logout</span>
         </button>
       </div>
