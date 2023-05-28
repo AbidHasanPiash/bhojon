@@ -131,7 +131,7 @@ export default function Menu() {
             placeholder="Item Name"
             value={itemName}
             onChange={(e)=>setItemName(e.target.value)}
-            className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition-all duration-300 dark:bg-gray-900 dark:border-gray-700"
+            className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
           />
           <div className="flex space-x-2">
             <input
@@ -140,14 +140,14 @@ export default function Menu() {
               placeholder="Item Price"
               value={itemPrice}
               onChange={(e)=>setItemPrice(e.target.value)}
-              className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition-all duration-300 dark:bg-gray-900 dark:border-gray-700"
+              className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
             />
             <input
               type="text"
               placeholder="Item Size"
               value={itemSize}
               onChange={(e)=>setItemSize(e.target.value)}
-              className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition-all duration-300 dark:bg-gray-900 dark:border-gray-700"
+              className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
             />
           </div>
           <button

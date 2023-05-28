@@ -50,19 +50,19 @@ export default function CardContainer({category}) {
         ))}
         </div>
         {data?.length > 8 && <div className='flex space-x-3 w-full items-center justify-center mt-6'>
-            <ReactPaginate
-                className='flex items-center justify-center space-x-2 w-fit h-10 dark:text-gray-400 bg-gray-200 dark:bg-gray-700 px-6 rounded-full'
-                previousLabel={<BiArrowToLeft size={22}/>}
-                nextLabel={<BiArrowToRight size={22}/>}
-                pageCount={pageCount}
-                marginPagesDisplayed={2}
-                pageRangeDisplayed={5}
-                onPageChange={handlePageChange}
-                pageClassName="mx-auto w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-400 dark:hover:bg-gray-800"
-                previousClassName="mx-auto w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-400 dark:hover:bg-gray-800 active:bg-sky-600 active:text-white"
-                nextClassName="mx-auto w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-400 dark:hover:bg-gray-800 active:bg-sky-600 active:text-white"
-                activeClassName="bg-sky-600 hover:bg-sky-600 text-white rounded-full mx-auto w-6 h-6 flex items-center justify-center text-gray-200"
-            />
+          <ReactPaginate
+            className='flex items-center justify-center space-x-2 w-fit h-10 dark:text-gray-400 bg-gray-200 dark:bg-gray-700 px-6 rounded-full'
+            previousLabel={<BiArrowToLeft size={22}/>}
+            nextLabel={<BiArrowToRight size={22}/>}
+            pageCount={pageCount}
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={5}
+            onPageChange={handlePageChange}
+            pageClassName="mx-auto w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-400 dark:hover:bg-gray-800"
+            previousClassName="mx-auto w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-400 dark:hover:bg-gray-800 active:bg-sky-600 active:text-white"
+            nextClassName="mx-auto w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-400 dark:hover:bg-gray-800 active:bg-sky-600 active:text-white"
+            activeClassName="bg-sky-600 hover:bg-sky-600 text-white rounded-full mx-auto w-6 h-6 flex items-center justify-center text-gray-200"
+          />
         </div>}
       </div>
   )
