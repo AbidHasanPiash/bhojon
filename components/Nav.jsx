@@ -33,7 +33,7 @@ export default function nav() {
       <div>
         <div className="-mx-6 px-6 py-4 flex justify-between">
           <Link href="#" title="home">
-            <h1 className="w-32 text-3xl text-gray-200">Bhojon.</h1>
+            <h1 className="text-3xl font-extrabold text-gray-800 dark:text-white">Bhojon.</h1>
           </Link>
           <button
             onClick={()=>setSidebarOpen((p)=>!p)}
