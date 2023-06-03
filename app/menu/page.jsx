@@ -8,37 +8,37 @@ export default function Menu() {
     {
       category: 'Appetizers',
       items: [
-        { name: 'Bruschetta', price: 8.99, image:'/images/food/Bruschetta.jpg', size:'1 pcs', orderToday:5, orderWeek:40 },
-        { name: 'Chicken Wings', price: 10.99, image:'/images/food/ChickenWings.jpg', size:'15 pcs', orderToday:6, orderWeek:29 },
-        { name: 'Caprese Salad', price: 9.99, image:'/images/food/CapreseSalad.jpg', size:'1 set', orderToday:2, orderWeek:34 },
-        { name: 'Bruschetta', price: 8.99, image:'/images/food/Bruschetta.jpg', size:'1 pcs', orderToday:5, orderWeek:40 },
-        { name: 'Chicken Wings', price: 10.99, image:'/images/food/ChickenWings.jpg', size:'15 pcs', orderToday:6, orderWeek:29 },
-        { name: 'Caprese Salad', price: 9.99, image:'/images/food/CapreseSalad.jpg', size:'1 set', orderToday:2, orderWeek:34 },
-        { name: 'Bruschetta', price: 8.99, image:'/images/food/Bruschetta.jpg', size:'1 pcs', orderToday:5, orderWeek:40 },
-        { name: 'Chicken Wings', price: 10.99, image:'/images/food/ChickenWings.jpg', size:'15 pcs', orderToday:6, orderWeek:29 },
-        { name: 'Caprese Salad', price: 9.99, image:'/images/food/CapreseSalad.jpg', size:'1 set', orderToday:2, orderWeek:34 },
-        { name: 'Bruschetta', price: 8.99, image:'/images/food/Bruschetta.jpg', size:'1 pcs', orderToday:5, orderWeek:40 },
-        { name: 'Chicken Wings', price: 10.99, image:'/images/food/ChickenWings.jpg', size:'15 pcs', orderToday:6, orderWeek:29 },
-        { name: 'Caprese Salad', price: 9.99, image:'/images/food/CapreseSalad.jpg', size:'1 set', orderToday:2, orderWeek:34 },
-        { name: 'Bruschetta', price: 8.99, image:'/images/food/Bruschetta.jpg', size:'1 pcs', orderToday:5, orderWeek:40 },
-        { name: 'Chicken Wings', price: 10.99, image:'/images/food/ChickenWings.jpg', size:'15 pcs', orderToday:6, orderWeek:29 },
-        { name: 'Caprese Salad', price: 9.99, image:'/images/food/CapreseSalad.jpg', size:'1 set', orderToday:2, orderWeek:34 },
+        { id: 1, name: 'Bruschetta', price: 8.99, image:'/images/food/Bruschetta.jpg', size:'1 pcs', orderToday:5, orderWeek:40 },
+        { id: 2, name: 'Chicken Wings', price: 10.99, image:'/images/food/ChickenWings.jpg', size:'15 pcs', orderToday:6, orderWeek:29 },
+        { id: 3, name: 'Caprese Salad', price: 9.99, image:'/images/food/CapreseSalad.jpg', size:'1 set', orderToday:2, orderWeek:34 },
+        { id: 4, name: 'Bruschetta', price: 8.99, image:'/images/food/Bruschetta.jpg', size:'1 pcs', orderToday:5, orderWeek:40 },
+        { id: 5, name: 'Chicken Wings', price: 10.99, image:'/images/food/ChickenWings.jpg', size:'15 pcs', orderToday:6, orderWeek:29 },
+        { id: 6, name: 'Caprese Salad', price: 9.99, image:'/images/food/CapreseSalad.jpg', size:'1 set', orderToday:2, orderWeek:34 },
+        { id: 7, name: 'Bruschetta', price: 8.99, image:'/images/food/Bruschetta.jpg', size:'1 pcs', orderToday:5, orderWeek:40 },
+        { id: 8, name: 'Chicken Wings', price: 10.99, image:'/images/food/ChickenWings.jpg', size:'15 pcs', orderToday:6, orderWeek:29 },
+        { id: 9, name: 'Caprese Salad', price: 9.99, image:'/images/food/CapreseSalad.jpg', size:'1 set', orderToday:2, orderWeek:34 },
+        { id: 10, name: 'Bruschetta', price: 8.99, image:'/images/food/Bruschetta.jpg', size:'1 pcs', orderToday:5, orderWeek:40 },
+        { id: 11, name: 'Chicken Wings', price: 10.99, image:'/images/food/ChickenWings.jpg', size:'15 pcs', orderToday:6, orderWeek:29 },
+        { id: 12, name: 'Caprese Salad', price: 9.99, image:'/images/food/CapreseSalad.jpg', size:'1 set', orderToday:2, orderWeek:34 },
+        { id: 13, name: 'Bruschetta', price: 8.99, image:'/images/food/Bruschetta.jpg', size:'1 pcs', orderToday:5, orderWeek:40 },
+        { id: 14, name: 'Chicken Wings', price: 10.99, image:'/images/food/ChickenWings.jpg', size:'15 pcs', orderToday:6, orderWeek:29 },
+        { id: 15, name: 'Caprese Salad', price: 9.99, image:'/images/food/CapreseSalad.jpg', size:'1 set', orderToday:2, orderWeek:34 },
       ],
     },
     {
       category: 'Main Courses',
       items: [
-        { name: 'Grilled Salmon', price: 16.99, image:'/images/food/GrilledSalmon.jpg', size:'2 pcs', orderToday:7, orderWeek:41 },
-        { name: 'Steak with Fries', price: 18.99, image:'/images/food/SteakwithFries.jpg', size:'1 set', orderToday:1, orderWeek:8 },
-        { name: 'Pasta Carbonara', price: 14.99, image:'/images/food/PastaCarbonara.jpg', size:'1 set', orderToday:4, orderWeek:25 },
+        { id: 16, name: 'Grilled Salmon', price: 16.99, image:'/images/food/GrilledSalmon.jpg', size:'2 pcs', orderToday:7, orderWeek:41 },
+        { id: 17, name: 'Steak with Fries', price: 18.99, image:'/images/food/SteakwithFries.jpg', size:'1 set', orderToday:1, orderWeek:8 },
+        { id: 18, name: 'Pasta Carbonara', price: 14.99, image:'/images/food/PastaCarbonara.jpg', size:'1 set', orderToday:4, orderWeek:25 },
       ],
     },
     {
       category: 'Desserts',
       items: [
-        { name: 'Chocolate Cake', price: 7.99, image:'/images/food/ChocolateCake.jpg', size:'1 pcs', orderToday:0, orderWeek:10 },
-        { name: 'Tiramisu', price: 6.99, image:'/images/food/Tiramisu.jpg', size:'1 pcs', orderToday:6, orderWeek:24 },
-        { name: 'Cheesecake', price: 8.99, image:'/images/food/Cheesecake.jpg', size:'1 pcs', orderToday:4, orderWeek:12 },
+        { id: 19, name: 'Chocolate Cake', price: 7.99, image:'/images/food/ChocolateCake.jpg', size:'1 pcs', orderToday:0, orderWeek:10 },
+        { id: 20, name: 'Tiramisu', price: 6.99, image:'/images/food/Tiramisu.jpg', size:'1 pcs', orderToday:6, orderWeek:24 },
+        { id: 21, name: 'Cheesecake', price: 8.99, image:'/images/food/Cheesecake.jpg', size:'1 pcs', orderToday:4, orderWeek:12 },
       ],
     },
   ]);
@@ -75,11 +75,54 @@ export default function Menu() {
     setItemPrice('');
     setItemSize('');
   };
+  // Delete an item
+  const deleteItem = (categoryId, itemName) => {
+    const updatedMenu = menu.map((category) => {
+      console.log('cat',categoryId, 'item',itemName);
+      if (category.category === categoryId) {
+        const updatedItems = category.items.filter((item) => item.name !== itemName);
+        return {
+          ...category,
+          items: updatedItems,
+        };
+      }
+      return category;
+    });
+
+    setMenu(updatedMenu);
+  };
+  //Edit an Item
+  const editItem = (categoryId, itemName) => {
+    const updatedMenu = menu.map((category) => {
+      if (category.category === categoryId) {
+        const updatedItems = category.items.map((item) => {
+          if (item.name === itemName) {
+            
+            console.log('Editing item:', item);
+            return item;
+          }
+          return item;
+        });
+        return {
+          ...category,
+          items: updatedItems,
+        };
+      }
+      return category;
+    });
+
+    setMenu(updatedMenu);
+  };
   return (
     <div className="px-6 pt-6 lg:grid grid-cols-4 gap-6">
       <div className="lg:col-span-3">
         {menu.map((category, index) => (
-          <CardContainer category={category} key={index}/>
+          <CardContainer 
+            key={index}
+            category={category}
+            editItem={editItem}
+            deleteItem={deleteItem}
+          />
         ))}
       </div>
       <div className='hidden lg:block h-fit space-y-3 sm:p-8 sticky top-[88px] rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10'>

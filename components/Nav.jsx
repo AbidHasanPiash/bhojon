@@ -8,6 +8,7 @@ import { SidebarContext } from '@/context/SidebarContext'
 // Icons
 import {HiOutlineLogout} from 'react-icons/hi'
 import {ImCross} from 'react-icons/im'
+import {TbChefHat} from 'react-icons/tb'
 import DashboardSVG from './svg/DashboardSVG'
 import MenuSVG from './svg/MenuSVG'
 import OrderSVG from './svg/OrderSVG'
@@ -29,11 +30,17 @@ export default function nav() {
     {name:'Employee', link: '/employee', icon: <EmployeeSVG/>}
   ]
   return (
-    <nav className={`fixed top-0 z-10 ${isSidebarOpen?'ml-[0%]':'ml-[-100%]'} flex h-screen w-full flex-col justify-between border-r bg-white px-6 pb-3 transition-all duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] dark:bg-gray-800 dark:border-gray-700`}>
+    <nav className={`fixed top-0 z-30 ${isSidebarOpen?'ml-[0%]':'ml-[-100%]'} flex h-screen w-full flex-col justify-between border-r bg-white px-6 pb-3 transition-all duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] dark:bg-gray-800 dark:border-gray-700`}>
       <div>
         <div className="-mx-6 px-6 py-4 flex justify-between">
           <Link href="#" title="home">
-            <h1 className="text-3xl font-extrabold text-gray-800 dark:text-white">Bhojon.</h1>
+            <h1 className="text-3xl text-gray-800 dark:text-white flex items-center justify-center">
+              <span>REST</span>
+              <span className='relative text-white'>
+                <span className='absolute -top-4 rotate-12'><TbChefHat/></span>
+                <span>O</span>
+              </span>
+              <span>MEN.</span></h1>
           </Link>
           <button
             onClick={()=>setSidebarOpen((p)=>!p)}

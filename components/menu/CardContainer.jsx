@@ -4,7 +4,7 @@ import FoodCard from './FoodCard'
 import ReactPaginate from 'react-paginate';
 import { BiDownArrow, BiArrowToLeft, BiArrowToRight } from 'react-icons/bi'
 
-export default function CardContainer({category}) {
+export default function CardContainer({category, deleteItem, editItem}) {
     const [isOpen, setIsOpen] = useState(false);
 
     const [currentPage, setCurrentPage] = useState(0);
@@ -13,7 +13,6 @@ export default function CardContainer({category}) {
       setCurrentPage(selected);
     };
     const data = category?.items;
-    console.log('daataaaaa', data);
 
     // Items per page
     const itemsPerPage = 8;
@@ -46,7 +45,7 @@ export default function CardContainer({category}) {
         </div>
         <div className="max-h-[600px] overflow-y-auto grid gap-6 px-4 sm:px-0 grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
         {currentPageItems?.map((item, itemIndex) => (
-            <FoodCard item={item} key={itemIndex}/>
+            <FoodCard item={item} key={itemIndex} category={category.category} deleteItem={deleteItem} editItem={editItem}/>
         ))}
         </div>
         {data?.length > 8 && <div className='flex space-x-3 w-full items-center justify-center mt-6'>
