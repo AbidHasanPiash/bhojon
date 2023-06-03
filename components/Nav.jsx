@@ -40,7 +40,7 @@ export default function nav() {
                 <span className='absolute -top-4 rotate-12'><TbChefHat/></span>
                 <span>O</span>
               </span>
-              <span>MEN.</span></h1>
+              <span>MAN.</span></h1>
           </Link>
           <button
             onClick={()=>setSidebarOpen((p)=>!p)}
