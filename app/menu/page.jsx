@@ -92,13 +92,16 @@ export default function Menu() {
     setMenu(updatedMenu);
   };
   //Edit an Item
+  const [isEditModal, setIsEditModal] = useState(false);
   const editItem = (categoryId, itemName) => {
     const updatedMenu = menu.map((category) => {
       if (category.category === categoryId) {
         const updatedItems = category.items.map((item) => {
           if (item.name === itemName) {
-            
+            setIsEditModal(true);
             console.log('Editing item:', item);
+            console.log('Editing Category:', categoryId);
+            console.log('Editing modal:', isEditModal);
             return item;
           }
           return item;
@@ -114,7 +117,7 @@ export default function Menu() {
     setMenu(updatedMenu);
   };
   return (
-    <div className="px-6 pt-6 lg:grid grid-cols-4 gap-6">
+    <div className="px-6 pt-6 lg:grid grid-cols-4 gap-6 w-full">
       <div className="lg:col-span-3">
         {menu.map((category, index) => (
           <CardContainer 
