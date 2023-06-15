@@ -55,6 +55,7 @@ export default function Menu() {
   };
   // Add new Items
   const [selectedCategory, setSelectedCategory] = useState('');
+  const itemId = Math.floor(Math.random());
   const [itemName, setItemName] = useState('');
   const [itemPrice, setItemPrice] = useState('');
   const [itemSize, setItemSize] = useState('');
@@ -62,7 +63,7 @@ export default function Menu() {
     event.preventDefault();
     const updatedMenu = menu.map((category) => {
       if (category.category === selectedCategory) {
-        const newItem = { name: itemName, price: parseFloat(itemPrice), size: itemSize };
+        const newItem = { id:itemId, name: itemName, price: parseFloat(itemPrice), size: itemSize };
         return {
           ...category,
           items: [...category.items, newItem],
@@ -78,7 +79,6 @@ export default function Menu() {
   // Delete an item
   const deleteItem = (categoryId, itemName) => {
     const updatedMenu = menu.map((category) => {
-      console.log('cat',categoryId, 'item',itemName);
       if (category.category === categoryId) {
         const updatedItems = category.items.filter((item) => item.name !== itemName);
         return {
@@ -92,17 +92,12 @@ export default function Menu() {
     setMenu(updatedMenu);
   };
   //Edit an Item
-  const [isEditModal, setIsEditModal] = useState(false);
-  const editItem = (categoryId, itemName) => {
+  const editItem = (itemCategory, updatedItem) => {
     const updatedMenu = menu.map((category) => {
-      if (category.category === categoryId) {
+      if (category.category === itemCategory) {
         const updatedItems = category.items.map((item) => {
-          if (item.name === itemName) {
-            setIsEditModal(true);
-            console.log('Editing item:', item);
-            console.log('Editing Category:', categoryId);
-            console.log('Editing modal:', isEditModal);
-            return item;
+          if (item.id === updatedItem.id) {
+            return { ...item, ...updatedItem };
           }
           return item;
         });
