@@ -29,19 +29,28 @@ export default function Menu() {
       ],
     },
     {
+      category: 'Chinese',
+      items: [
+        { id: 16, name: 'Chicken Dumpling', price: 26.99, image:'/images/food/ChickenDumpling.jpg', size:'9 pcs', orderToday:7, orderWeek:41 },
+        { id: 17, name: 'Dim Sum', price: 28.99, image:'/images/food/DimSum.jpg', size:'1 set', orderToday:1, orderWeek:8 },
+        { id: 18, name: 'Kung Pao Tofu', price: 24.99, image:'/images/food/KungPaoTofu.jpg', size:'1 set', orderToday:4, orderWeek:25 },
+        { id: 18, name: 'Sushi', price: 21.99, image:'/images/food/Sushi.jpg', size:'4 pcs', orderToday:4, orderWeek:25 },
+      ],
+    },
+    {
       category: 'Main Courses',
       items: [
-        { id: 16, name: 'Grilled Salmon', price: 16.99, image:'/images/food/GrilledSalmon.jpg', size:'2 pcs', orderToday:7, orderWeek:41 },
-        { id: 17, name: 'Steak with Fries', price: 18.99, image:'/images/food/SteakwithFries.jpg', size:'1 set', orderToday:1, orderWeek:8 },
-        { id: 18, name: 'Pasta Carbonara', price: 14.99, image:'/images/food/PastaCarbonara.jpg', size:'1 set', orderToday:4, orderWeek:25 },
+        { id: 19, name: 'Grilled Salmon', price: 16.99, image:'/images/food/GrilledSalmon.jpg', size:'2 pcs', orderToday:7, orderWeek:41 },
+        { id: 20, name: 'Steak with Fries', price: 18.99, image:'/images/food/SteakwithFries.jpg', size:'1 set', orderToday:1, orderWeek:8 },
+        { id: 21, name: 'Pasta Carbonara', price: 14.99, image:'/images/food/PastaCarbonara.jpg', size:'1 set', orderToday:4, orderWeek:25 },
       ],
     },
     {
       category: 'Desserts',
       items: [
-        { id: 19, name: 'Chocolate Cake', price: 7.99, image:'/images/food/ChocolateCake.jpg', size:'1 pcs', orderToday:0, orderWeek:10 },
-        { id: 20, name: 'Tiramisu', price: 6.99, image:'/images/food/Tiramisu.jpg', size:'1 pcs', orderToday:6, orderWeek:24 },
-        { id: 21, name: 'Cheesecake', price: 8.99, image:'/images/food/Cheesecake.jpg', size:'1 pcs', orderToday:4, orderWeek:12 },
+        { id: 22, name: 'Chocolate Cake', price: 7.99, image:'/images/food/ChocolateCake.jpg', size:'1 pcs', orderToday:0, orderWeek:10 },
+        { id: 23, name: 'Tiramisu', price: 6.99, image:'/images/food/Tiramisu.jpg', size:'1 pcs', orderToday:6, orderWeek:24 },
+        { id: 24, name: 'Cheesecake', price: 8.99, image:'/images/food/Cheesecake.jpg', size:'1 pcs', orderToday:4, orderWeek:12 },
       ],
     },
   ]);

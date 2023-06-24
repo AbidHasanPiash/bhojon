@@ -108,7 +108,7 @@ export default function Order() {
             <div>
               <h1 className='text-xl'>Order Summary</h1>
             </div>
-            <table class="table-auto w-full">
+            <table class="table-fixed w-full">
               <thead>
                 <tr className='bg-blue-200 dark:bg-blue-950'>
                   <th className='py-2 text-left pl-2 rounded-tl-lg'>ID</th>
