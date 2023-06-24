@@ -1,9 +1,16 @@
 'use client'
-import React from 'react';
+import React, { useState } from 'react';
 import {MdDeliveryDining, MdAccessTimeFilled, MdOutlineRestaurantMenu} from 'react-icons/md';
 import {BsBookmarkStarFill} from 'react-icons/bs';
 
 export default function Order() {
+  const [Orders, setOrders] = useState([
+    {id:1, table:3, waiter:'John', time:'11:24 AM', amount:350, items:['chicken', 'dring']},
+    {id:2, table:5, waiter:'Walle', time:'11:00 AM', amount:465, items:['chicken', 'dring']},
+    {id:3, table:1, waiter:'John', time:'10:30 AM', amount:180, items:['chicken', 'dring']},
+    {id:4, table:7, waiter:'Mike', time:'10:12 AM', amount:290, items:['chicken', 'dring']},
+    {id:5, table:10, waiter:'Jack', time:'09:45 AM', amount:340, items:['chicken', 'dring']},
+  ])
   return (
     <section>
       <div className="px-6 pt-6">
@@ -96,6 +103,28 @@ export default function Order() {
             <div>
               <h1 className='text-xl'>Order Summary</h1>
             </div>
+            <table class="table-fixed w-full">
+              <thead>
+                <tr className='bg-blue-200 dark:bg-blue-950'>
+                  <th className='py-2 text-left pl-2 rounded-tl-lg'>ID</th>
+                  <th className='py-2 text-left'>Table</th>
+                  <th className='py-2 text-left'>Waiter</th>
+                  <th className='py-2 text-left'>Time</th>
+                  <th className='py-2 text-left rounded-tr-lg'>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Orders.map((order, index)=>(
+                  <tr key={index} className='h-10 odd:bg-gray-200 even:bg-gray-300 dark:odd:bg-gray-900 dark:even:bg-gray-700 transform duration-200 hover:scale-[0.99]'>
+                    <td className={`${index === Orders.length - 1 && 'rounded-bl-lg'} pl-2`}>{order.id}</td>
+                    <td>{order.table}</td>
+                    <td>{order.waiter}</td>
+                    <td>{order.time}</td>
+                    <td className={index === Orders.length - 1 && 'rounded-br-lg'}>{order.amount}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

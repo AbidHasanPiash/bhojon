@@ -5,7 +5,7 @@ import ReactPaginate from 'react-paginate';
 import { BiDownArrow, BiArrowToLeft, BiArrowToRight } from 'react-icons/bi'
 
 export default function CardContainer({category, deleteItem, editItem}) {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
 
     const [currentPage, setCurrentPage] = useState(0);
   
