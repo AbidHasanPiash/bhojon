@@ -26,24 +26,43 @@ export default function ReceiptModal({closeReceiptModal}) {
           </button>
         </div>
         {/* Modal Body */}
-        <div className="grid grid-cols-2">
-          <div>
-            items
+        <div>
+          <div className="flex items-center justify-between mt-6 space-x-10">
+            <p className="w-full">Select a order</p>
             <select
               value={selectedOrder}
               onChange={(e)=>setSelectedOrder(e.target.value)}
-              className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition-all duration-300 dark:bg-gray-900 dark:border-gray-700"
+              className="outline-none rounded-xl md:pr-40 border border-gray-300 p-2.5 text-sm dark:bg-gray-900 dark:border-gray-700"
             >
-              <option value="">Select a category</option>
+              <option value="">Manual</option>
               {Orders.map((Order, index) => (
                 <option key={index} value={Order.id}>
-                  {Order.id} / {Order.table}
+                  <span  className="">{Order.id} - {Order.table}</span>
                 </option>
               ))}
             </select>
           </div>
-          <div>
-            cash
+          <div className="rounded-xl border mt-6 border-gray-300 p-2.5 text-sm dark:bg-gray-900 dark:border-gray-700">
+            <table className='table-auto w-full text-gray-800 dark:text-gray-300'>
+            <caption className="caption-top text-xs mb-4">
+              Order summary
+            </caption>
+              <thead className="border-b mb-5">
+                <tr className="text-left font-bold">
+                  <th>Item Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+            <tbody>
+              <tr><td>Today</td> <td>1</td> <td>50 tk</td></tr>
+              <tr><td>Today</td> <td>2</td> <td>60 tk</td></tr>
+              <tr><td>Today</td> <td>1</td> <td>80 tk</td></tr>
+              <tr><td>Today</td> <td>1</td> <td>55 tk</td></tr>
+              <tr className="border-b mb-5"><td>week</td> <td>3</td> <td>30 tk</td></tr>
+              <tr><td> </td> <td>Total</td> <td>275 tk</td></tr>
+            </tbody>
+          </table>
           </div>
         </div>
       </div>
