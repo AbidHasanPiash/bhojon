@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react";
 import { ImCross } from "react-icons/im";
-import { TbPrinter } from "react-icons/tb";
+import { TbPrinter, TbCurrencyTaka } from "react-icons/tb";
 
 export default function ReceiptModal({closeReceiptModal}) {
   const Orders = [
@@ -42,6 +42,8 @@ export default function ReceiptModal({closeReceiptModal}) {
   const [vat, setVat] = useState(14);
   const [discount, setDiscount] = useState(0);
   const [extraCharge, setExtraCharge] = useState(0);
+  const [customerName, setCustomerName] = useState('');
+  const [customerPhoneNumber, setCustomerPhoneNumber] = useState('');
   const [selectedOrder, setSelectedOrder] = useState('');
   const selectedOrderObj = Orders.find(order => order.id === parseInt(selectedOrder));
   return (
@@ -75,38 +77,59 @@ export default function ReceiptModal({closeReceiptModal}) {
               ))}
             </select>
           </div>
-          <div className="flex items-center justify-between mt-6 space-x-2 rounded-xl border border-gray-300 p-2.5 dark:border-gray-700">
-            <label> <span className="pl-1"> Vat %</span>
-              <input type="number" step="1" value={vat} onChange={(e)=>setVat(e.target.value)}
-                className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
-              />
-            </label>
-            <label> <span className="pl-1">Discount %</span>
-              <input type="number" step="1" value={discount} onChange={(e)=>setDiscount(e.target.value)}
-                className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
-              />
-            </label>
-            <label> <span className="pl-1">Extra charge</span>
-              <input type="number" step="1" value={extraCharge} onChange={(e)=>setExtraCharge(e.target.value)}
-                className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
-              />
-            </label>
+          <div className="mt-6 rounded-xl border border-gray-300 p-2.5 dark:border-gray-700">
+            <div className="flex space-x-2">
+              <label> <span className="pl-1"> Vat %</span>
+                <input type="number" step="1" value={vat} onChange={(e)=>setVat(e.target.value)}
+                  className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
+                />
+              </label>
+              <label> <span className="pl-1">Discount %</span>
+                <input type="number" step="1" value={discount} onChange={(e)=>setDiscount(e.target.value)}
+                  className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
+                />
+              </label>
+              <label> <span className="pl-1">Extra charge</span>
+                <input type="number" step="1" value={extraCharge} onChange={(e)=>setExtraCharge(e.target.value)}
+                  className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
+                />
+              </label>
+            </div>
+            <div className="mt-3">
+              <div className="p-1.5">
+                <h1>Customer details</h1>
+              </div>
+              <div className="flex items-center justify-between space-x-2">
+                <input type="text" placeholder="Name" value={customerName} onChange={(e)=>setCustomerName(e.target.value)}
+                  className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
+                />
+                <input type="text" placeholder="Phone Number" value={customerPhoneNumber} onChange={(e)=>setCustomerPhoneNumber(e.target.value)}
+                  className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
+                />
+              </div>
+            </div>
           </div>
           <div className="rounded-xl border mt-6 border-gray-300 p-2.5 text-sm dark:bg-gray-900 dark:border-gray-700">
             <table className='table-auto w-full'>
               <caption className="caption-top text-xs mb-4">Order summary</caption>
               <thead className="border-b mb-5">
-                <tr className="text-left font-bold h-10"> <th>Item Name</th> <th>Quantity</th> <th>Price</th> </tr>
+                <tr className="text-left font-bold"> <th>Item Name</th> <th>Quantity</th> <th>Price (tk)</th> </tr>
               </thead>
               <tbody>
                 {selectedOrderObj?.items.map((item, index) => (
-                  <tr key={index} className="h-8">
+                  <tr key={index}>
                     <td>{item.name}</td>
                     <td>{item.quantity}</td>
-                    <td>{item.price} tk</td>
+                    <td>{item.price}</td>
                   </tr>
                 ))}
-                <tr className="border-t font-bold h-10"><td> </td> <td className="text-right">Total = </td> <td>{selectedOrderObj?.totalPrice} tk</td></tr>
+                {selectedOrder && <tr className="border-t border-dashed"><td> </td> <td className="text-right">Total = </td> <td>{selectedOrderObj?.totalPrice}</td></tr>}
+                {selectedOrder && vat > 0 && <tr><td> </td> <td className="text-right">Vat = </td> <td>{(selectedOrderObj?.totalPrice*vat)/100}</td></tr>}
+                {discount > 0 && <tr><td> </td> <td className="text-right">Discount = </td> <td>{(selectedOrderObj?.totalPrice*discount)/100}</td></tr>}
+                {extraCharge > 0 && <tr><td> </td> <td className="text-right">Extra Charge = </td> <td>{extraCharge}</td></tr>}
+                {selectedOrder && <tr className="border-t border-dashed font-bold h-10"><td> </td> <td className="text-right">Total Payable = </td> 
+                  <td>{Math.floor(selectedOrderObj?.totalPrice + ((selectedOrderObj?.totalPrice*vat)/100) + ((selectedOrderObj?.totalPrice*discount)/100) + extraCharge)} tk</td>
+                </tr>}
               </tbody>
             </table>
           </div>
