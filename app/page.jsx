@@ -24,7 +24,7 @@ export default function Home() {
           >
             <span className="text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white flex items-center justify-center space-x-3 px-3">
               <TbCurrencyTaka size={22}/>
-              <span> Receipt {receiptModal}</span>
+              <span>Receipt</span>
             </span>
           </button>
           <button
