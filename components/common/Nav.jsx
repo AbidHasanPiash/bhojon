@@ -8,7 +8,6 @@ import { SidebarContext } from '@/context/SidebarContext'
 // Icons
 import {HiOutlineLogout} from 'react-icons/hi'
 import {ImCross} from 'react-icons/im'
-import {TbChefHat} from 'react-icons/tb'
 import DashboardSVG from '../svg/DashboardSVG'
 import MenuSVG from '../svg/MenuSVG'
 import OrderSVG from '../svg/OrderSVG'
@@ -34,20 +33,12 @@ export default function nav() {
       <div>
         <div className="-mx-6 px-6 py-4 flex justify-between">
           <Link href="#" title="home">
-            <h1 className="text-3xl text-gray-800 dark:text-white flex items-center justify-center">
-              <span>REST</span>
-              <span className='relative text-white'>
-                <span className='absolute -top-4 rotate-12'><TbChefHat/></span>
-                <span>O</span>
-              </span>
-              <span>MAN.</span></h1>
+            <h1 className="text-3xl flex items-center justify-center">
+              RestoMan.
+            </h1>
           </Link>
-          <button
-            onClick={()=>setSidebarOpen((p)=>!p)}
-            aria-label="Close Nav"
-            className="h-10 w-10 flex items-center justify-center rounded-xl border lg:hidden text-gray-900 dark:text-gray-200 bg-gray-100 active:bg-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:active:bg-gray-800"
-          >
-            <ImCross/>
+          <button onClick={()=>setSidebarOpen((p)=>!p)} className="btn_layout_icon lg:hidden">
+            <span className="btn_icon"><ImCross/></span>
           </button>
         </div>
 
@@ -69,10 +60,10 @@ export default function nav() {
                 onClick={()=>setSidebarOpen(false)}
                 aria-label="dashboard"
                 className={`group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300 
-                  ${activeItem === item.link ? 'bg-gradient-to-r from-sky-600 to-fuchsia-400':' hover:bg-black/10'}`}
+                  ${activeItem === item.link ? 'bg-gradient-to-r from-blue-500 to-transparent':' hover:bg-black/20'}`}
               >
                 {item.icon}
-                <span className="group-hover:text-gray-700 dark:group-hover:text-gray-50">{item.name}</span>
+                <span className={activeItem === item.link ? "text-white font-bold tracking-widest" : "group-hover:text-gray-700 dark:group-hover:text-gray-50"}>{item.name}</span>
               </Link>
             </li>
           ))}
