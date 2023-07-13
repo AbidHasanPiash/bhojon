@@ -46,7 +46,7 @@ export default function Activities() {
   };
   return (
     <div className="md:col-span-2 lg:col-span-1">
-      <div className="h-full space-y-6 group p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+      <div className="container_layout">
         <div className="w-full h-60 flex items-center justify-center">
           <Doughnut data={data}  options={options}/>
         </div>

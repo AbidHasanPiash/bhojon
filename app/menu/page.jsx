@@ -148,7 +148,7 @@ export default function Menu() {
           ))}
         </div>
         {/* Create Item Section */}
-        <div className={`${createShow?'fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/10 backdrop-blur-md flex items-center justify-center w-full h-full z-30':'hidden sticky top-[88px]'}  lg:block `}>
+        <div className={`${createShow?'fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/10 backdrop-blur-md flex items-center justify-center w-full h-full z-30':'lg:block h-fit sticky top-[88px]'}`}>
           <div className="space-y-3 h-fit p-4 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 shadow-2xl shadow-gray-600/10">
             <div className="flex items-center justify-between">
               <h1 className="text-3xl font-bold md:text-4xl text-center">Create</h1>

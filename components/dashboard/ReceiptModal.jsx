@@ -47,51 +47,43 @@ export default function ReceiptModal({closeReceiptModal}) {
   const [selectedOrder, setSelectedOrder] = useState('');
   const selectedOrderObj = Orders.find(order => order.id === parseInt(selectedOrder));
   return (
-    <div className={`fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/10 backdrop-blur-md flex items-center justify-center w-full h-full z-30`}>
-      <div className="min-w-fit h-fit space-y-3 mx-6 p-4 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+    <div className="modal_container">
+      <div className="modal_body">
         {/* Modal Header */}
-        <div className='w-full flex items-center justify-between space-x-10'>
+        <div className='modal_header'>
           <h1 className='text-lg md:text-xl'>Case Receipt</h1>
-          <button
-            onClick={closeReceiptModal}
-            aria-label="Close Nav"
-            className="h-10 w-10 flex items-center justify-center rounded-xl border text-gray-900 dark:text-gray-200 bg-gray-100 active:bg-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:active:bg-gray-800"
-          >
-            <ImCross/>
+          <button onClick={closeReceiptModal} className="btn_layout_icon" >
+            <span className="btn_icon"><ImCross/></span>
           </button>
         </div>
         {/* Modal Body */}
         <div>
-          <div className="flex items-center justify-between mt-6 space-x-10 rounded-xl border border-gray-300 p-2.5 dark:border-gray-700">
-            <p className="w-full">Select a order</p>
-            <select
-              value={selectedOrder}
-              onChange={(e)=>setSelectedOrder(e.target.value)}
-              className="outline-none rounded-xl md:pr-40 border border-gray-300 p-2.5 text-sm dark:bg-gray-900 dark:border-gray-700"
-            >
-              <option value="">Select</option>
-              {Orders.map((Order, index) => (
-                <option key={index} value={Order.id}>
-                  <span  className="">{Order.id} - {Order.table} - {Order.time} - {Order.servedBy}</span>
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="mt-6 rounded-xl border border-gray-300 p-2.5 dark:border-gray-700">
-            <div className="flex space-x-2">
+          <div className="modal_body_element">
+            <div className="flex items-center justify-between space-x-10 ">
+              <p className="w-full">Select a order</p>
+              <select value={selectedOrder} onChange={(e)=>setSelectedOrder(e.target.value)} className="select_layout">
+                <option value="">Select</option>
+                {Orders.map((Order, index) => (
+                  <option key={index} value={Order.id}>
+                    <span  className="">{Order.id} - {Order.table} - {Order.time} - {Order.servedBy}</span>
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="flex space-x-2 mt-3">
               <label> <span className="pl-1"> Vat %</span>
                 <input type="number" step="1" value={vat} onChange={(e)=>setVat(e.target.value)}
-                  className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
+                  className="input_lauout"
                 />
               </label>
               <label> <span className="pl-1">Discount %</span>
                 <input type="number" step="1" value={discount} onChange={(e)=>setDiscount(e.target.value)}
-                  className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
+                  className="input_lauout"
                 />
               </label>
               <label> <span className="pl-1">Extra charge</span>
                 <input type="number" step="1" value={extraCharge} onChange={(e)=>setExtraCharge(e.target.value)}
-                  className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
+                  className="input_lauout"
                 />
               </label>
             </div>
@@ -101,18 +93,18 @@ export default function ReceiptModal({closeReceiptModal}) {
               </div>
               <div className="flex items-center justify-between space-x-2">
                 <input type="text" placeholder="Name" value={customerName} onChange={(e)=>setCustomerName(e.target.value)}
-                  className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
+                  className="input_lauout"
                 />
                 <input type="text" placeholder="Phone Number" value={customerPhoneNumber} onChange={(e)=>setCustomerPhoneNumber(e.target.value)}
-                  className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
+                  className="input_lauout"
                 />
               </div>
             </div>
           </div>
-          <div className="rounded-xl border mt-6 border-gray-300 p-2.5 text-sm dark:bg-gray-900 dark:border-gray-700">
+          <div className="rounded-xl border mt-6 border-gray-300 p-2.5 dark:bg-gray-900 dark:border-gray-700">
             <table className='table-auto w-full'>
               <caption className="caption-top text-xs mb-4">Order summary</caption>
-              <thead className="border-b mb-5">
+              <thead className="border-b border-dashed mb-5">
                 <tr className="text-left font-bold"> <th>Item Name</th> <th>Quantity</th> <th>Price (tk)</th> </tr>
               </thead>
               <tbody>
@@ -127,22 +119,16 @@ export default function ReceiptModal({closeReceiptModal}) {
                 {selectedOrder && vat > 0 && <tr><td> </td> <td className="text-right">Vat = </td> <td>{(selectedOrderObj?.totalPrice*vat)/100}</td></tr>}
                 {discount > 0 && <tr><td> </td> <td className="text-right">Discount = </td> <td>{(selectedOrderObj?.totalPrice*discount)/100}</td></tr>}
                 {extraCharge > 0 && <tr><td> </td> <td className="text-right">Extra Charge = </td> <td>{extraCharge}</td></tr>}
-                {selectedOrder && <tr className="border-t border-dashed font-bold h-10"><td> </td> <td className="text-right">Total Payable = </td> 
-                  <td>{Math.floor(selectedOrderObj?.totalPrice + ((selectedOrderObj?.totalPrice*vat)/100) + ((selectedOrderObj?.totalPrice*discount)/100) + extraCharge)} tk</td>
+                {selectedOrder && <tr className="border-t border-dashed h-10"><td> </td> <td className="text-right">Total Payable = </td> 
+                  <td>{Math.floor(selectedOrderObj?.totalPrice + ((selectedOrderObj?.totalPrice*vat)/100) - ((selectedOrderObj?.totalPrice*discount)/100) + extraCharge)} tk</td>
                 </tr>}
               </tbody>
             </table>
           </div>
-          <div className="flex items-center justify-between mt-6 rounded-xl border border-gray-300 p-2.5 dark:border-gray-700">
+          <div className="modal_body_element flex items-center justify-between">
             <h1>Complete order and Print</h1>
-            <button
-              aria-label="save"
-              className="h-10 rounded-xl border flex items-center justify-center bg-gray-100 active:bg-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:active:bg-gray-800"
-            >
-              <span className="text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white flex items-center justify-center space-x-3 px-3">
-                <TbPrinter size={22}/>
-                <span>Print</span>
-              </span>
+            <button className="btn_layout_text">
+              <span className="btn_text"> <TbPrinter size={22}/> <span>Print</span> </span>
             </button>
           </div>
         </div>
