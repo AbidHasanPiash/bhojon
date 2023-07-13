@@ -1,18 +1,30 @@
+/* eslint-disable */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
-/* circle{
-  stroke: url(#GradientColor);
-  fill: none ;
-  stroke-width: 20px;
-  stroke-dasharray: 472;
-  stroke-dashoffset: 472;
-  animation: anim 2s linear forwards;
-} */
-/* @keyframes anim {
-  100%{
-    stroke-dashoffset: 100;
-  }
-} */
+/************* Button *************/
+.btn_layout_text {
+  @apply h-10 rounded-xl border flex items-center justify-center bg-gray-100 active:bg-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:active:bg-gray-800
+}
+.btn_text {
+  @apply text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white flex items-center justify-center space-x-3 px-3
+}
+.btn_layout_icon {
+  @apply h-10 w-10 rounded-xl border flex items-center justify-center bg-gray-100 active:bg-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:active:bg-gray-800
+}
+.btn_icon {
+  @apply text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white
+}
+
+/************* Container Layout *************/
+.body_and_text_color {
+  @apply bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-white
+}
+.container_gap {
+  @apply px-6 pt-6
+}
+.container_layout {
+  @apply p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10
+}
