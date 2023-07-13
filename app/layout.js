@@ -1,8 +1,8 @@
 'use client'
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Nav from '@/components/Nav'
-import Header from '@/components/Header'
+import Nav from '@/components/common/Nav'
+import Header from '@/components/common/Header'
 import { SidebarContext } from '@/context/SidebarContext'
 import { useState } from 'react'
 

@@ -9,11 +9,11 @@ import { SidebarContext } from '@/context/SidebarContext'
 import {HiOutlineLogout} from 'react-icons/hi'
 import {ImCross} from 'react-icons/im'
 import {TbChefHat} from 'react-icons/tb'
-import DashboardSVG from './svg/DashboardSVG'
-import MenuSVG from './svg/MenuSVG'
-import OrderSVG from './svg/OrderSVG'
-import FinanceSVG from './svg/FinanceSVG'
-import EmployeeSVG from './svg/EmployeeSVG'
+import DashboardSVG from '../svg/DashboardSVG'
+import MenuSVG from '../svg/MenuSVG'
+import OrderSVG from '../svg/OrderSVG'
+import FinanceSVG from '../svg/FinanceSVG'
+import EmployeeSVG from '../svg/EmployeeSVG'
 
 export default function nav() {
   const {isSidebarOpen, setSidebarOpen} = useContext(SidebarContext);
