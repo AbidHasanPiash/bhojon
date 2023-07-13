@@ -28,3 +28,25 @@
 .container_layout {
   @apply h-full p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10
 }
+
+/************* Modal *************/
+.modal_container {
+  @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/10 backdrop-blur-md flex items-center justify-center w-full h-full z-30
+}
+.modal_header {
+  @apply w-full flex items-center justify-between space-x-10
+}
+.modal_body {
+  @apply min-w-fit h-fit space-y-3 mx-6 p-4 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10
+}
+.modal_body_element {
+  @apply mt-6 rounded-xl border border-gray-300 p-2.5 dark:border-gray-700
+}
+
+/************* Input *************/
+.select_layout {
+  @apply outline-none rounded-xl md:pr-40 border border-gray-300 p-2.5 text-sm dark:bg-gray-900 dark:border-gray-700
+}
+.input_lauout {
+  @apply outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700
+}
