@@ -18,7 +18,7 @@ export default function ComparedToLastDay() {
         tension: 0.5
       },
       {
-        label: "Tomorrow",
+        label: "Yesterday",
         data: [1, 2, 3, 5, 5, 7, 5, 3],
         fill: true,
         backgroundColor: "transparent",
@@ -63,15 +63,15 @@ export default function ComparedToLastDay() {
     <div>
       <div className="h-full group p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
         <h5 className="text-xl text-gray-700 dark:text-gray-300 space-x-5">
-          <span><span className="text-sky-500">●</span> Tomorrow</span>
-          <span><span className="text-fuchsia-500"> ●</span> Today</span>
+          <span><span className="text-fuchsia-500">●</span> Today</span>
+          <span><span className="text-sky-500">●</span> Yesterday</span>
         </h5>
         <div className="my-8">
           <h1 className="text-5xl font-bold text-gray-800 dark:text-white">
             45%
           </h1>
           <span className="text-gray-500 dark:text-gray-400">
-            Compared to last day $3,988 <span className="text-green-500">▲</span>
+            Compared to Yesterday $3,988 <span className="text-green-500">▲</span>
           </span>
         </div>
 
@@ -82,7 +82,7 @@ export default function ComparedToLastDay() {
         <table className="mt-6 -mb-2 w-full text-gray-600">
           <tbody>
             <tr className="dark:text-gray-300">
-              <td className="py-2">Tomorrow at this time</td>
+              <td className="py-2">Yesterday at this time</td>
               <td className="text-gray-500">896</td>
             </tr>
             <tr className="dark:text-gray-300">
