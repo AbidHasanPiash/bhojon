@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react";
 import { ImCross } from "react-icons/im";
-import { TbPrinter, TbCurrencyTaka } from "react-icons/tb";
+import { TbPrinter } from "react-icons/tb";
 
 export default function ReceiptModal({closeReceiptModal}) {
   const Orders = [
