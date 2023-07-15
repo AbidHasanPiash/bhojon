@@ -9,15 +9,16 @@ export default function TableRow({index, row, Orders}) {
         <tr className={` ${index % 2 === 0 ? 'bg-gray-200 dark:bg-gray-900' : 'bg-gray-300 dark:bg-gray-700'} h-10`}>
             <td className={`${index === Orders.length - 1 && 'rounded-bl-lg'} pl-2`}>{row.id}</td>
             <td>{row.table}</td>
+            <td>{row.status}</td>
             <td>{row.waiter}</td>
             <td>{row.time}</td>
             <td>{row.amount}</td>
             <td className={`${index === Orders.length - 1 && 'rounded-br-lg'} pr-2`}>
                 <button 
-                onClick={()=>setIsExpand((p)=>!p)}
-                className={`${isExpand && '-rotate-90'} transition duration-200`}
-                >
-                <BiLeftArrow/>
+                  onClick={()=>setIsExpand((p)=>!p)}
+                  className={`${isExpand && '-rotate-90'} transition duration-200`}
+                  >
+                  <BiLeftArrow/>
                 </button>
             </td>
         </tr>

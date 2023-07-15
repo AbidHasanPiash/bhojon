@@ -64,3 +64,8 @@
 .rp_active {
   @apply bg-blue-600 hover:bg-blue-800 text-white rounded-full mx-auto flex items-center justify-center font-bold
 }
+
+/************* Order Card *************/
+.order_card {
+  @apply flex items-center justify-between p-4 sm:p-6 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10
+}
