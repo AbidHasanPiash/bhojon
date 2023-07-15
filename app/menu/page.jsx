@@ -128,14 +128,11 @@ export default function Menu() {
       {/* Heading for mobile vew */}
       <div className="sticky px-10 pt-6 flex items-center justify-between lg:hidden">
         <h5 className="text-2xl font-medium text-gray-600 dark:text-white">Menu</h5>
-        <button
-          onClick={()=>setCreateShow((p)=>!p)}
-          className="h-10 gap-2 px-2 rounded-xl border bg-gray-100 active:bg-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:active:bg-gray-800"
-        >
-          <span className="flex space-x-2 text-gray-600 dark:text-gray-300 group-hover:text-gray-700 dark:group-hover:text-white"> <span>Create</span> <MdControlPointDuplicate size={22}/></span>
+        <button onClick={()=>setCreateShow((p)=>!p)} className="btn_layout_text" >
+          <span className="btn_text"> <span>Create</span> <MdControlPointDuplicate size={22}/></span>
         </button>
       </div>
-      <div className="px-6 pt-6 lg:grid grid-cols-4 gap-6 w-full">
+      <div className="container_gap lg:grid grid-cols-4 gap-6 w-full">
         {/* Menu section */}
         <div className="lg:col-span-3">
           {menu.map((category, index) => (
@@ -148,36 +145,26 @@ export default function Menu() {
           ))}
         </div>
         {/* Create Item Section */}
-        <div className={`${createShow?'fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/10 backdrop-blur-md flex items-center justify-center w-full h-full z-30':'lg:block h-fit sticky top-[88px]'}`}>
-          <div className="space-y-3 h-fit p-4 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 shadow-2xl shadow-gray-600/10">
+        <div className={`${createShow?'modal_container':'lg:block h-fit sticky top-[88px]'}`}>
+          <div className="modal_body">
             <div className="flex items-center justify-between">
               <h1 className="text-3xl font-bold md:text-4xl text-center">Create</h1>
-              <button
-                aria-label="Close Nav"
-                onClick={()=>setCreateShow((p)=>!p)}
-                className="h-10 w-10 flex items-center justify-center rounded-xl border lg:hidden text-gray-900 dark:text-gray-200 bg-gray-100 active:bg-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:active:bg-gray-800"
-              >
-                <ImCross/>
+              <button onClick={()=>setCreateShow((p)=>!p)} className="btn_layout_icon lg:hidden">
+                <span className="btn_icon"><ImCross/></span>
               </button>
             </div>
             {/* Create new Category form */}
             <h1 className="pt-2">Create new category</h1>
-            <form onSubmit={addCategory} className="flex space-x-2">
+            <form onSubmit={addCategory} className="flex flex-col items-center justify-center gap-3">
               <input
                 type="text"
-                name="category"
                 placeholder="Category"
-                aria-label="new category"
                 value={newCategory}
                 onChange={(e)=>setNewCategory(e.target.value)}
-                class="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 dark:bg-gray-900 dark:border-gray-700"
+                class="input_layout"
               />
-              <button
-                type="submit"
-                disabled={!newCategory}
-                className="h-10 w-10 gap-2 px-2 rounded-xl border bg-gray-100 active:bg-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:active:bg-gray-800"
-              >
-                <span className="text-gray-600 dark:text-gray-300 group-hover:text-gray-700 dark:group-hover:text-white"><HiPlusCircle size={22}/></span>
+              <button type="submit" disabled={!newCategory} className="btn_layout_text disabled:cursor-not-allowed">
+                <span className="btn_text"> <HiPlusCircle size={22}/> <span>Add Item</span> </span>
               </button>
             </form>
             <div className="flex items-center justify-center w-full text-gray-500 font-extrabold">
@@ -188,11 +175,7 @@ export default function Menu() {
             {/* Create new Items from */}
             <h1 className="pt-2">Create new Items</h1>
             <form className="space-y-3">
-              <select
-                value={selectedCategory}
-                onChange={(e)=>setSelectedCategory(e.target.value)}
-                className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition-all duration-300 dark:bg-gray-900 dark:border-gray-700"
-              >
+              <select value={selectedCategory} onChange={(e)=>setSelectedCategory(e.target.value)} className="select_layout w-full">
                 <option value="">Select a category</option>
                 {menu.map((category, index) => (
                   <option key={index} value={category.category}>
@@ -200,13 +183,7 @@ export default function Menu() {
                   </option>
                 ))}
               </select>
-              <input
-                type="text"
-                placeholder="Item Name"
-                value={itemName}
-                onChange={(e)=>setItemName(e.target.value)}
-                className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
-              />
+              <input type="text" placeholder="Item Name" value={itemName} onChange={(e)=>setItemName(e.target.value)} className="input_layout"/>
               <div className="flex space-x-2">
                 <input
                   type="number"
@@ -214,24 +191,19 @@ export default function Menu() {
                   placeholder="Item Price"
                   value={itemPrice}
                   onChange={(e)=>setItemPrice(e.target.value)}
-                  className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
+                  className="input_layout"
                 />
                 <input
                   type="text"
                   placeholder="Item Size"
                   value={itemSize}
                   onChange={(e)=>setItemSize(e.target.value)}
-                  className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
+                  className="input_layout"
                 />
               </div>
               <div className="flex items-center justify-center">
-                <button
-                  type="submit"
-                  onClick={addItem}
-                  className="h-10 w-fit gap-2 px-4 rounded-xl border bg-gray-100 active:bg-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:active:bg-gray-800"
-                  disabled={!selectedCategory || !itemName || !itemPrice || !itemSize}
-                >
-                  Add Item
+                <button type="submit" onClick={addItem} className="btn_layout_text disabled:cursor-not-allowed" disabled={!selectedCategory || !itemName || !itemPrice || !itemSize}>
+                  <span className="btn_text"> <HiPlusCircle size={22}/> <span>Add Item</span> </span>
                 </button>
               </div>
             </form>
@@ -241,92 +213,3 @@ export default function Menu() {
     </div>
   )
 }
-
-
-{/*  
-        <div className={`${createShow?'fixed left-4 right-4 ring ring-cyan-300':'hidden sticky'} top-[88px] lg:block h-fit space-y-3 p-4 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10`}>
-          <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold md:text-4xl text-center">Create</h1>
-            <button
-              aria-label="Close Nav"
-              onClick={()=>setCreateShow((p)=>!p)}
-              className="h-10 w-10 flex items-center justify-center rounded-xl border lg:hidden text-gray-900 dark:text-gray-200 bg-gray-100 active:bg-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:active:bg-gray-800"
-            >
-              <ImCross/>
-            </button>
-          </div>
-          <h1 className="pt-2">Create new category</h1>
-          <form onSubmit={addCategory} className="flex space-x-2">
-            <input
-              type="text"
-              name="category"
-              placeholder="Category"
-              aria-label="new category"
-              value={newCategory}
-              onChange={(e)=>setNewCategory(e.target.value)}
-              class="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 dark:bg-gray-900 dark:border-gray-700"
-            />
-            <button
-              type="submit"
-              disabled={!newCategory}
-              className="h-10 w-10 gap-2 px-2 rounded-xl border bg-gray-100 active:bg-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:active:bg-gray-800"
-            >
-              <span className="text-gray-600 dark:text-gray-300 group-hover:text-gray-700 dark:group-hover:text-white"><HiPlusCircle size={22}/></span>
-            </button>
-          </form>
-          <div className="flex items-center justify-center w-full text-gray-500 font-extrabold">
-            <h1>-----</h1>
-            <h1> x </h1>
-            <h1>-----</h1>
-          </div>
-          <h1 className="pt-2">Create new Items</h1>
-          <form className="space-y-3">
-            <select
-              value={selectedCategory}
-              onChange={(e)=>setSelectedCategory(e.target.value)}
-              className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition-all duration-300 dark:bg-gray-900 dark:border-gray-700"
-            >
-              <option value="">Select a category</option>
-              {menu.map((category, index) => (
-                <option key={index} value={category.category}>
-                  {category.category}
-                </option>
-              ))}
-            </select>
-            <input
-              type="text"
-              placeholder="Item Name"
-              value={itemName}
-              onChange={(e)=>setItemName(e.target.value)}
-              className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
-            />
-            <div className="flex space-x-2">
-              <input
-                type="number"
-                step="0.01"
-                placeholder="Item Price"
-                value={itemPrice}
-                onChange={(e)=>setItemPrice(e.target.value)}
-                className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
-              />
-              <input
-                type="text"
-                placeholder="Item Size"
-                value={itemSize}
-                onChange={(e)=>setItemSize(e.target.value)}
-                className="outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700"
-              />
-            </div>
-            <div className="flex items-center justify-center">
-              <button
-                type="submit"
-                onClick={addItem}
-                className="h-10 w-fit gap-2 px-4 rounded-xl border bg-gray-100 active:bg-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:active:bg-gray-800"
-                disabled={!selectedCategory || !itemName || !itemPrice || !itemSize}
-              >
-                Add Item
-              </button>
-            </div>
-          </form>
-        </div>
-*/}

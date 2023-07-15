@@ -1,4 +1,4 @@
-export default function EmployeeSVG() {
+export default function Setup() {
   return (
     <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
       <path
