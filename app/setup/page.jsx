@@ -54,6 +54,22 @@ export default function Setup() {
           <h1 className="text-xl font-bold md:text-3xl">Employees.</h1>
         </div>
       </div>
+      <div className="container_gap">
+        <div className="container_layout">
+          <div className="flex items-center justify-between">
+            <h1 className="text-xl font-bold md:text-3xl">Customer detailes.</h1>
+            <input type="search" placeholder="Search customer" className="input_layout2 md:w-96" />
+            <div className="flex items-center space-x-3">
+              <span>Sort by</span>
+              <select className="select_layout">
+                <option value="default">Default</option>
+                <option value="name">Name</option>
+                <option value="order">Order</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
