@@ -1,6 +1,24 @@
+import CustomerTableRow from "@/components/setup/CustomerTableRow"
+
 export default function Setup() {
+  const Customers = [
+    {id:1, name:'name1', phone:'01000000000', visited:3, started:'4-Jun-23', totalbill:860},
+    {id:1, name:'name1', phone:'01000000000', visited:3, started:'4-Jun-23', totalbill:860},
+    {id:1, name:'name1', phone:'01000000000', visited:3, started:'4-Jun-23', totalbill:860},
+    {id:1, name:'name1', phone:'01000000000', visited:3, started:'4-Jun-23', totalbill:860},
+    {id:1, name:'name1', phone:'01000000000', visited:3, started:'4-Jun-23', totalbill:860},
+    {id:1, name:'name1', phone:'01000000000', visited:3, started:'4-Jun-23', totalbill:860},
+    {id:1, name:'name1', phone:'01000000000', visited:3, started:'4-Jun-23', totalbill:860},
+    {id:1, name:'name1', phone:'01000000000', visited:3, started:'4-Jun-23', totalbill:860},
+    {id:1, name:'name1', phone:'01000000000', visited:3, started:'4-Jun-23', totalbill:860},
+    {id:1, name:'name1', phone:'01000000000', visited:3, started:'4-Jun-23', totalbill:860},
+    {id:1, name:'name1', phone:'01000000000', visited:3, started:'4-Jun-23', totalbill:860},
+    {id:1, name:'name1', phone:'01000000000', visited:3, started:'4-Jun-23', totalbill:860},
+    {id:1, name:'name1', phone:'01000000000', visited:3, started:'4-Jun-23', totalbill:860},
+  ]
   return (
     <div>
+      {/* Options */}
       <div className="container_gap grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
         <div className="container_layout space-y-6">
           <h1 className="text-xl font-bold md:text-3xl">Cash Receipt Defaults.</h1>
@@ -54,20 +72,47 @@ export default function Setup() {
           <h1 className="text-xl font-bold md:text-3xl">Employees.</h1>
         </div>
       </div>
+      {/* Customers Table */}
       <div className="container_gap">
-        <div className="container_layout">
-          <div className="flex items-center justify-between">
+        <div className="container_layout space-y-6">
+          {/* Header */}
+          <div className="w-full lg:flex lg:items-center lg:justify-between space-y-3">
             <h1 className="text-xl font-bold md:text-3xl">Customer detailes.</h1>
-            <input type="search" placeholder="Search customer" className="input_layout2 md:w-96" />
+            <input type="search" placeholder="Search customer" className="input_layout2 w-full md:w-1/2" />
+          </div>
+          <div className="flex items-center justify-between">
+            <button className="btn_layout_text">
+              <span className="btn_text"><span>Add Customer</span> </span>
+            </button>
             <div className="flex items-center space-x-3">
               <span>Sort by</span>
               <select className="select_layout">
                 <option value="default">Default</option>
                 <option value="name">Name</option>
-                <option value="order">Order</option>
+                <option value="order">Visited</option>
+                <option value="bill">Bill</option>
               </select>
             </div>
           </div>
+          {/* Table */}
+          <table class="table-auto w-full">
+            <thead>
+              <tr className='bg-blue-200 dark:bg-blue-950'>
+                <th className='p-2 text-left rounded-tl-lg'>ID</th>
+                <th className='p-2 text-left'>Name</th>
+                <th className='p-2 text-left'>Phone</th>
+                <th className='p-2 text-left hidden lg:table-cell'>Visited</th>
+                <th className='p-2 text-left hidden lg:table-cell'>Started</th>
+                <th className='p-2 text-left'>Total Bill</th>
+                <th className='p-2 text-left rounded-tr-lg'>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Customers.map((customer, index)=>(
+                <CustomerTableRow key={index} index={index} customer={customer} Customers={Customers} />
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
