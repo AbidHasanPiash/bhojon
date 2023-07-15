@@ -12,7 +12,7 @@ import DashboardSVG from '../svg/DashboardSVG'
 import MenuSVG from '../svg/MenuSVG'
 import OrderSVG from '../svg/OrderSVG'
 import FinanceSVG from '../svg/FinanceSVG'
-import EmployeeSVG from '../svg/EmployeeSVG'
+import Setup from '../svg/Setup'
 
 export default function nav() {
   const {isSidebarOpen, setSidebarOpen} = useContext(SidebarContext);
@@ -26,7 +26,7 @@ export default function nav() {
     {name:'Menu', link: '/menu', icon: <MenuSVG/>},
     {name:'Order', link: '/order', icon: <OrderSVG/>},
     {name:'Finance', link: '/finance', icon: <FinanceSVG/>},
-    {name:'Employee', link: '/employee', icon: <EmployeeSVG/>}
+    {name:'Setup', link: '/setup', icon: <Setup/>}
   ]
   return (
     <nav className={`fixed top-0 z-30 ${isSidebarOpen?'ml-[0%]':'ml-[-100%]'} flex h-screen w-full flex-col justify-between border-r bg-white px-6 pb-3 transition-all duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] dark:bg-gray-800 dark:border-gray-700`}>
