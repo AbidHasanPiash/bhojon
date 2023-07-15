@@ -164,7 +164,7 @@ export default function Menu() {
                 class="input_layout"
               />
               <button type="submit" disabled={!newCategory} className="btn_layout_text disabled:cursor-not-allowed">
-                <span className="btn_text"> <HiPlusCircle size={22}/> <span>Add Item</span> </span>
+                <span className="btn_text"> <HiPlusCircle size={22}/> <span>Add Category</span> </span>
               </button>
             </form>
             <div className="flex items-center justify-center w-full text-gray-500 font-extrabold">
