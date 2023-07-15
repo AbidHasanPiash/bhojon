@@ -47,7 +47,7 @@
 .select_layout {
   @apply outline-none rounded-xl border border-gray-300 p-2.5 text-sm dark:bg-gray-900 dark:border-gray-700
 }
-.input_lauout {
+.input_layout {
   @apply outline-none w-full rounded-xl border border-gray-300 p-2.5 text-sm transition focus:border-cyan-300 duration-300 dark:bg-gray-900 dark:border-gray-700
 }
 

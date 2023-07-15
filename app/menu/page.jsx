@@ -161,7 +161,7 @@ export default function Menu() {
                 placeholder="Category"
                 value={newCategory}
                 onChange={(e)=>setNewCategory(e.target.value)}
-                class="input_lauout"
+                class="input_layout"
               />
               <button type="submit" disabled={!newCategory} className="btn_layout_text disabled:cursor-not-allowed">
                 <span className="btn_text"> <HiPlusCircle size={22}/> <span>Add Item</span> </span>
@@ -183,7 +183,7 @@ export default function Menu() {
                   </option>
                 ))}
               </select>
-              <input type="text" placeholder="Item Name" value={itemName} onChange={(e)=>setItemName(e.target.value)} className="input_lauout"/>
+              <input type="text" placeholder="Item Name" value={itemName} onChange={(e)=>setItemName(e.target.value)} className="input_layout"/>
               <div className="flex space-x-2">
                 <input
                   type="number"
@@ -191,14 +191,14 @@ export default function Menu() {
                   placeholder="Item Price"
                   value={itemPrice}
                   onChange={(e)=>setItemPrice(e.target.value)}
-                  className="input_lauout"
+                  className="input_layout"
                 />
                 <input
                   type="text"
                   placeholder="Item Size"
                   value={itemSize}
                   onChange={(e)=>setItemSize(e.target.value)}
-                  className="input_lauout"
+                  className="input_layout"
                 />
               </div>
               <div className="flex items-center justify-center">

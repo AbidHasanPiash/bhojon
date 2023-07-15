@@ -96,7 +96,7 @@ export default function FoodCard({item, category, deleteItem, editItem}) {
                   ...prevItem,
                   name: e.target.value
                 }))}
-                className="input_lauout"
+                className="input_layout"
               />
               <div className="flex space-x-2">
                 <input
@@ -108,7 +108,7 @@ export default function FoodCard({item, category, deleteItem, editItem}) {
                     ...prevItem,
                     price: e.target.value
                   }))}
-                  className="input_lauout"
+                  className="input_layout"
                 />
                 <input
                   type="text"
@@ -118,7 +118,7 @@ export default function FoodCard({item, category, deleteItem, editItem}) {
                     ...prevItem,
                     size: e.target.value
                   }))}
-                  className="input_lauout"
+                  className="input_layout"
                 />
               </div>
             </div>

@@ -73,17 +73,17 @@ export default function ReceiptModal({closeReceiptModal}) {
             <div className="flex space-x-2 mt-3">
               <label> <span className="pl-1"> Vat %</span>
                 <input type="number" step="1" value={vat} onChange={(e)=>setVat(e.target.value)}
-                  className="input_lauout"
+                  className="input_layout"
                 />
               </label>
               <label> <span className="pl-1">Discount %</span>
                 <input type="number" step="1" value={discount} onChange={(e)=>setDiscount(e.target.value)}
-                  className="input_lauout"
+                  className="input_layout"
                 />
               </label>
               <label> <span className="pl-1">Extra charge</span>
                 <input type="number" step="1" value={extraCharge} onChange={(e)=>setExtraCharge(e.target.value)}
-                  className="input_lauout"
+                  className="input_layout"
                 />
               </label>
             </div>
@@ -93,10 +93,10 @@ export default function ReceiptModal({closeReceiptModal}) {
               </div>
               <div className="flex items-center justify-between space-x-2">
                 <input type="text" placeholder="Name" value={customerName} onChange={(e)=>setCustomerName(e.target.value)}
-                  className="input_lauout"
+                  className="input_layout"
                 />
                 <input type="text" placeholder="Phone Number" value={customerPhoneNumber} onChange={(e)=>setCustomerPhoneNumber(e.target.value)}
-                  className="input_lauout"
+                  className="input_layout"
                 />
               </div>
             </div>
