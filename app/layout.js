@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} body_and_text_color`}>
-      <SidebarContext.Provider value={{isSidebarOpen, setSidebarOpen}}>
+        <SidebarContext.Provider value={{isSidebarOpen, setSidebarOpen}}>
           <Nav/>
           <div className="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
             <Header/>
