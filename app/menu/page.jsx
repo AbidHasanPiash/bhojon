@@ -129,7 +129,7 @@ export default function Menu() {
       <div className="sticky px-10 pt-6 flex items-center justify-between lg:hidden">
         <h5 className="text-2xl font-medium text-gray-600 dark:text-white">Menu</h5>
         <button onClick={()=>setCreateShow((p)=>!p)} className="btn_layout_text" >
-          <span className="btn_text"> <span>Create</span> <MdControlPointDuplicate size={22}/></span>
+          <span className="btn_text"><MdControlPointDuplicate size={22}/><span>Create</span></span>
         </button>
       </div>
       <div className="container_gap lg:grid grid-cols-4 gap-6 w-full">
@@ -145,7 +145,7 @@ export default function Menu() {
           ))}
         </div>
         {/* Create Item Section */}
-        <div className={`${createShow?'modal_container':'lg:block h-fit sticky top-[88px]'}`}>
+        <div className={`${createShow?'modal_container':'hidden lg:block h-fit sticky top-[88px]'}`}>
           <div className="modal_body">
             <div className="flex items-center justify-between">
               <h1 className="text-3xl font-bold md:text-4xl text-center">Create</h1>
