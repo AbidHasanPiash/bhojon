@@ -148,7 +148,7 @@ export default function Menu() {
         <div className={`${createShow?'modal_container':'hidden lg:block h-fit sticky top-[88px]'}`}>
           <div className="modal_body">
             <div className="flex items-center justify-between">
-              <h1 className="text-3xl font-bold md:text-4xl text-center">Create</h1>
+              <h1 className="text-xl font-bold md:text-3xl text-center">Create</h1>
               <button onClick={()=>setCreateShow((p)=>!p)} className="btn_layout_icon lg:hidden">
                 <span className="btn_icon"><ImCross/></span>
               </button>
