@@ -22,7 +22,7 @@ export default function CardContainer({category, deleteItem, editItem}) {
   return (
     <div className={`${isOpen?'max-h-screen':'max-h-24'} transition-all duration-300 overflow-hidden mb-6 p-6 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10`}>
         <div className='pb-10 flex items-center justify-between'>
-          <div className='text-2xl font-bold md:text-4xl space-x-5'>
+          <div className='text-xl font-bold md:text-3xl space-x-5'>
             <span> {category.category} </span>
             <span> {category.items.length} </span>
           </div>
