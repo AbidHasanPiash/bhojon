@@ -1,3 +1,5 @@
+'use client'
+import { useState } from 'react';
 import ExpenseRow from '@/components/finance/ExpenseRow';
 import { HiPlusCircle, HiSave } from 'react-icons/hi';
 
@@ -5,9 +7,39 @@ export default function Finance() {
   const date = new Date();
   const options = { day: 'numeric', month: 'short', year: 'numeric' };
   const currentDate = date.toLocaleString('en-US', options);
-  let opening = 24850;
-  let dailySales = 52865;
-  let closing = 24850;
+  const [expenses, setExpenses] = useState([{ category: 'Food', description: '', amount: '' },]);
+  const [opening, setOpening] = useState(10);
+  const [invest, setinvest] = useState(0);
+  const [dailySales, setDailySales] = useState(5);
+  const [closing, setClosing] = useState(opening + dailySales + invest);
+  const [totalExpenses, setTotalExpenses] = useState(0)
+
+  const handleInputChange = (index, field, value) => {
+    const newExpenses = [...expenses];
+    newExpenses[index][field] = value;
+    setExpenses(newExpenses);
+  };
+
+  const handleAddInput = () => {
+    setExpenses([...expenses, { category: 'Food', description: '', amount: '' }]);
+  };
+
+  const handleRemoveInput = (index) => {
+    const newExpenses = [...expenses];
+    newExpenses.splice(index, 1);
+    setExpenses(newExpenses);
+  };
+
+  const handleSaveData = () => {
+    const total = expenses.reduce((acc, expense) => acc + Number(expense.amount), 0);
+    setTotalExpenses(total);
+    setClosing(opening + invest + dailySales + total);
+    console.log(totalExpenses);
+  };
+  const handleInvest = (e) => {
+    setinvest(Number(e.target.value))
+    setClosing(opening + invest + dailySales + totalExpenses);
+  }
   return (
     <div className='container_gap'>
       <div className='flex flex-col-reverse lg:grid grid-cols-4 gap-6 w-full'>
@@ -20,22 +52,30 @@ export default function Finance() {
           {/* Costing and liability */}
           <div className='modal_body_element space-y-2'>
             <h1 className='text-sm text-center text-gray-500 dark:text-gray-300'>Expenditures Breakdown.</h1>
-            <ExpenseRow/>
-            <ExpenseRow/>
-            <ExpenseRow/>
-            <ExpenseRow/>
+            {expenses.map((expense, index) => (
+              <ExpenseRow
+                key={index}
+                index={index}
+                category={expense.category}
+                description={expense.description}
+                amount={expense.amount}
+                onChange={handleInputChange}
+                onRemove={handleRemoveInput}
+              />
+            ))}
           </div>
           <div className='modal_body_element flex items-center justify-end space-x-3'>
-            <button className="btn_layout_text">
+            <span className='input_layout2 w-28 text-center'>{totalExpenses}</span>
+            <button className="btn_layout_text" onClick={handleAddInput}>
               <span className="btn_text"><HiPlusCircle size={22}/> <span>Add</span> </span>
             </button>
-            <button className="btn_layout_text">
+            <button className="btn_layout_text" onClick={handleSaveData}>
               <span className="btn_text"><HiSave size={22}/> <span>Save</span> </span>
             </button>
           </div>
         </div>
         <div className='container_layout space-y-6'>
-          <h1 className='text-xl font-bold md:text-3xl'>Balance Summary.</h1>
+          <h1 className='text-xl font-bold md:text-3xl'>Summary.</h1>
           <div className='grid lg:grid-cols-1 grid-cols-2 gap-3'>
             <div>
               <p className='p-1'>Opening</p>
@@ -43,7 +83,13 @@ export default function Finance() {
             </div>
             <div>
               <p className='p-1'>Invest</p>
-              <input type="number" placeholder='cash' className='input_layout' />
+              <input 
+                type="number" 
+                placeholder='Invest' 
+                value={invest}
+                onChange={handleInvest} 
+                className='input_layout' 
+              />
             </div>
             <div>
               <p className='p-1'>Daily Sales</p>
