@@ -75,7 +75,7 @@ export default function Finance() {
             </button>
           </div>
         </div>
-        <div className='container_layout space-y-6'>
+        <div className='container_layout2 space-y-6'>
           <h1 className='text-xl font-bold md:text-3xl'>Summary.</h1>
           <div className='grid lg:grid-cols-1 grid-cols-2 gap-3'>
             <div>

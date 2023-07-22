@@ -28,6 +28,9 @@
 .container_layout {
   @apply h-full p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10
 }
+.container_layout2 {
+  @apply h-fit p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10
+}
 
 /************* Modal *************/
 .modal_container {
