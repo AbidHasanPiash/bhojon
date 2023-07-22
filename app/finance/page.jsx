@@ -8,38 +8,39 @@ export default function Finance() {
   const options = { day: 'numeric', month: 'short', year: 'numeric' };
   const currentDate = date.toLocaleString('en-US', options);
   const [expenses, setExpenses] = useState([{ category: 'Food', description: '', amount: '' },]);
-  const [opening, setOpening] = useState(10);
-  const [invest, setinvest] = useState(0);
-  const [dailySales, setDailySales] = useState(5);
-  const [closing, setClosing] = useState(opening + dailySales + invest);
+  const [opening, setOpening] = useState(100);
+  const [invest, setInvest] = useState();
+  const [dailySales, setDailySales] = useState(50);
+  const [closing, setClosing] = useState(opening + dailySales);
   const [totalExpenses, setTotalExpenses] = useState(0)
-
   const handleInputChange = (index, field, value) => {
     const newExpenses = [...expenses];
     newExpenses[index][field] = value;
     setExpenses(newExpenses);
   };
-
   const handleAddInput = () => {
     setExpenses([...expenses, { category: 'Food', description: '', amount: '' }]);
   };
-
   const handleRemoveInput = (index) => {
     const newExpenses = [...expenses];
     newExpenses.splice(index, 1);
     setExpenses(newExpenses);
   };
-
   const handleSaveData = () => {
     const total = expenses.reduce((acc, expense) => acc + Number(expense.amount), 0);
     setTotalExpenses(total);
-    setClosing(opening + invest + dailySales + total);
+    setClosing(opening + Number(invest) + dailySales - total);
     console.log(totalExpenses);
   };
   const handleInvest = (e) => {
-    setinvest(Number(e.target.value))
-    setClosing(opening + invest + dailySales + totalExpenses);
-  }
+    const value = Number(e.target.value);
+    if (!isNaN(value)) {
+      setInvest(value);
+      setClosing(opening + value + dailySales - totalExpenses);
+    } if (value === 0 || value === 'e') {
+      setInvest('');
+    }
+  };
   return (
     <div className='container_gap'>
       <div className='flex flex-col-reverse lg:grid grid-cols-4 gap-6 w-full'>
