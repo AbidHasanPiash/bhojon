@@ -4,6 +4,10 @@
 @tailwind utilities;
 
 
+/************* Gradient Text *************/
+.still_gradient {
+  @apply bg-gradient-to-r from-gray-700 to-white dark:from-gray-300 dark:to-gray-900 bg-clip-text text-transparent;
+}
 /************* Button *************/
 .btn_layout_text {
   @apply h-10 rounded-xl border flex items-center justify-center bg-gray-100 active:bg-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:active:bg-gray-800
