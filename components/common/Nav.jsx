@@ -22,7 +22,7 @@ export default function nav() {
       setActiveItem(path);
   },[path]);
   const menuItem = [
-    {name:'Dashboard', link: '/', icon: <DashboardSVG/>},
+    {name:'Dashboard', link: '/dashboard', icon: <DashboardSVG/>},
     {name:'Menu', link: '/menu', icon: <MenuSVG/>},
     {name:'Order', link: '/order', icon: <OrderSVG/>},
     {name:'Finance', link: '/finance', icon: <FinanceSVG/>},
