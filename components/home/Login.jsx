@@ -1,11 +1,19 @@
-import React from 'react'
+import Image from "next/image";
 import Link from "next/link";
 import { BiUserCircle } from "react-icons/bi";
 import { HiOutlineLogin } from "react-icons/hi";
 
 export default function Login() {
+  const Clients = [
+    {img:'/images/client/client1.png'},
+    {img:'/images/client/client2.png'},
+    {img:'/images/client/client3.png'},
+    {img:'/images/client/client4.png'},
+    {img:'/images/client/client5.png'},
+    {img:'/images/client/client6.png'},
+  ]
   return (
-    <section className="container_gap h-screen">
+    <section className="container_gap h-screen bg_tech_ground bg-opacity-10">
       <div className='fixed top-0 left-0 right-0 w-full h-20 bg-black'>
         <Link href={'/dashboard'}>dashboard</Link>
       </div>
@@ -16,14 +24,14 @@ export default function Login() {
             <span className='text-cyan-700 dark:text-cyan-400'>.</span>
           </h1>
           <p className='text-xl lg:text-2xl tracking-widest lg:tracking-[5px] pl-1 lg:pl-2'>Your Digital Restaurant Solution</p>
-
+          <p className="mt-10 pr-20 tracking-widest text-sm lg:text-base">The ultimate digital restaurant solution, simplifying operations, enhancing efficiency, and elevating dining experiences seamlessly.</p>
         </div>
         <div className='flex items-center justify-center md:mx-6 lg:mx-12'>
           <div className='flex flex-col items-center'>
-            <div className='rounded-3xl shadow-2xl shadow-cyan-700'>
-              <div className="container_layout2 w-full z-10">
+            <div className='rounded-3xl hover:shadow-2xl hover:shadow-cyan-800'>
+              <div className="container_layout2 w-full">
                 <div className='flex items-center justify-center'>
-                  <div className='-mt-20 flex items-center justify-center w-20 h-20 input_layout2'>
+                  <div className='-mt-20 flex items-center justify-center w-20 h-20 input_layout2 bg-white'>
                     <span className='text-6xl text-cyan-700 dark:text-cyan-400'>
                       <BiUserCircle/>
                     </span>
@@ -37,25 +45,32 @@ export default function Login() {
                   <form className='space-y-3'>
                     <input type="text" placeholder='User name' className='input_layout'/>
                     <input type="password" placeholder='Password' className='input_layout'/>
-                    <div className='flex items-end justify-end'>
+                    <Link href={'/dashboard'} className='flex items-center justify-center'>
                       <button type="submit" className="btn_layout_text">
                         <span className="btn_text"> <HiOutlineLogin size={22}/> <span>Login</span> </span>
                       </button>
-                    </div>
+                    </Link>
                   </form>
                 </div>
-              </div>
-            </div>
-            <div className='w-full flex items-center justify-center -z-10'>
-              <div className='-mt-2 btn_layout_text w-40'>
-                <h1 className='btn_text'>Help me</h1>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className='h-1/6 border'>
-        client logo
+      <div className='h-1/6'>
+        <div className="h-full w-full overflow-y-auto flex items-center justify-center space-x-6 lg:space-x-10 select-none">
+          {Clients.map((client, index)=>(
+            <Image
+              key={index}
+              className="w-10 h-10 lg:w-20 lg:h-20 object-cover dark:grayscale dark:hover:grayscale-0 hover:scale-110 transition-all duration-300"
+              src={client.img}
+              alt="food"
+              loading="lazy"
+              width="200"
+              height="200"
+            />
+          ))}
+        </div>
       </div>
     </section>
   )
