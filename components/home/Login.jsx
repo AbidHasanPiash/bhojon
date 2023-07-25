@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BiUserCircle } from "react-icons/bi";
 import { HiOutlineLogin } from "react-icons/hi";
+import Nav from "@/components/home/Nav";
 
 export default function Login() {
   const Clients = [
@@ -13,10 +14,8 @@ export default function Login() {
     {img:'/images/client/client6.png'},
   ]
   return (
-    <section className="container_gap h-screen bg_tech_ground bg-opacity-10">
-      <div className='fixed top-0 left-0 right-0 w-full h-20 bg-black'>
-        <Link href={'/dashboard'}>dashboard</Link>
-      </div>
+    <section className="container_gap relative h-screen bg_tech_ground">
+      <Nav/>
       <div className='h-5/6 grid lg:grid-cols-2 gap-6 max-w-7xl mx-auto'>
         <div className='h-full flex flex-col items-start justify-center'>
           <h1 className="text-6xl lg:text-8xl font-bold still_gradient">
@@ -25,6 +24,12 @@ export default function Login() {
           </h1>
           <p className='text-xl lg:text-2xl tracking-widest lg:tracking-[5px] pl-1 lg:pl-2'>Your Digital Restaurant Solution</p>
           <p className="mt-10 pr-20 tracking-widest text-sm lg:text-base">The ultimate digital restaurant solution, simplifying operations, enhancing efficiency, and elevating dining experiences seamlessly.</p>
+          <div className="mt-10 w-full md:w-80 h-14 px-2 border border-dashed border-cyan-500 rounded-full flex items-center justify-between">
+            <p className="text-center w-full">Wanna try ?</p>
+            <button className="h-10 bg-cyan-500 rounded-full px-6">
+              Contact
+            </button>
+          </div>
         </div>
         <div className='flex items-center justify-center md:mx-6 lg:mx-12'>
           <div className='flex flex-col items-center'>
