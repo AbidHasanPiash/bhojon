@@ -14,7 +14,7 @@ export default function Login() {
     {img:'/images/client/client6.png'},
   ]
   return (
-    <section className="container_gap relative h-screen bg_tech_ground">
+    <section className="container_gap h-screen bg_tech_ground">
       <Nav/>
       <div className='h-5/6 grid lg:grid-cols-2 gap-6 max-w-7xl mx-auto'>
         <div className='h-full flex flex-col items-start justify-center'>
@@ -23,11 +23,13 @@ export default function Login() {
             <span className='text-cyan-700 dark:text-cyan-400'>.</span>
           </h1>
           <p className='text-xl lg:text-2xl tracking-widest lg:tracking-[5px] pl-1 lg:pl-2'>Your Digital Restaurant Solution</p>
-          <p className="mt-10 pr-20 tracking-widest text-sm lg:text-base">The ultimate digital restaurant solution, simplifying operations, enhancing efficiency, and elevating dining experiences seamlessly.</p>
+          <p className="mt-10 pr-20 tracking-wider text-gray-600 dark:text-gray-400 text-sm lg:text-base hidden lg:block">The ultimate digital restaurant solution, simplifying operations, enhancing efficiency, and elevating dining experiences seamlessly.</p>
           <div className="mt-10 w-full md:w-80 h-14 px-2 border border-dashed border-cyan-500 rounded-full flex items-center justify-between">
-            <p className="text-center w-full">Wanna try ?</p>
-            <button className="h-10 bg-cyan-500 rounded-full px-6">
-              Contact
+            <p className="text-center w-full">Get free trial !!</p>
+            <button className="h-10 bg-cyan-500 hover:bg-black font-bold text-black hover:text-cyan-500 duration-300 transition-colors rounded-full px-6">
+              <Link href={'#'}>
+                Contact
+              </Link>
             </button>
           </div>
         </div>
