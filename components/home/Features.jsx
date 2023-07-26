@@ -26,11 +26,10 @@ export default function Features() {
                 </div>
                 <div className="space-y-4">
                 <h3 className="text-2xl font-semibold text-gray-800 transition dark:text-white">
-                    First feature
+                    Analysis
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                    Quae accusantium, laudantium recusandae tenetur fugiat non cum doloribus aperiam
-                    voluptates nostrum.
+                    Harness data-driven decisions with comprehensive analysis of food trends and customer preferences.
                 </p>
                 </div>
                 <img
@@ -53,11 +52,10 @@ export default function Features() {
                 </div>
                 <div className="space-y-4">
                 <h3 className="text-2xl font-semibold text-gray-800 transition dark:text-white">
-                    Second feature
+                    Report
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                    Quae accusantium, laudantium recusandae tenetur fugiat non cum doloribus aperiam
-                    voluptates nostrum.
+                    Generate daily finance reports and essential analytics for optimized decision-making.
                 </p>
                 </div>
                 <img
@@ -80,11 +78,10 @@ export default function Features() {
                 </div>
                 <div className="space-y-4">
                 <h3 className="text-2xl font-semibold text-gray-800 transition dark:text-white">
-                    Third feature
+                    Reviews
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                    Quae accusantium, laudantium recusandae tenetur fugiat non cum doloribus aperiam
-                    voluptates nostrum.
+                    Identify top customers and gather valuable reviews for unparalleled customer satisfaction.
                 </p>
                 </div>
                 <img
