@@ -26,7 +26,10 @@ export default function Features() {
                 </div>
                 <div className="space-y-4">
                 <h3 className="text-2xl font-semibold text-gray-800 transition dark:text-white">
-                    Analysis
+                    Analysis <br />
+                    <span className='text-xs lg:text-sm text-gray-600 dark:text-gray-400'>
+                        Food and Customer Demand Insights
+                    </span>
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
                     Harness data-driven decisions with comprehensive analysis of food trends and customer preferences.
@@ -52,7 +55,10 @@ export default function Features() {
                 </div>
                 <div className="space-y-4">
                 <h3 className="text-2xl font-semibold text-gray-800 transition dark:text-white">
-                    Report
+                    Report <br />
+                    <span className='text-xs lg:text-sm text-gray-600 dark:text-gray-400'>
+                        Instant Finance and Performance Reports
+                    </span>
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
                     Generate daily finance reports and essential analytics for optimized decision-making.
@@ -78,7 +84,10 @@ export default function Features() {
                 </div>
                 <div className="space-y-4">
                 <h3 className="text-2xl font-semibold text-gray-800 transition dark:text-white">
-                    Reviews
+                    Reviews <br />
+                    <span className='text-xs lg:text-sm text-gray-600 dark:text-gray-400'>
+                        Personalized Experience and Reviews
+                    </span>
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
                     Identify top customers and gather valuable reviews for unparalleled customer satisfaction.

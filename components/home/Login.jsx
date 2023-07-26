@@ -14,7 +14,7 @@ export default function Login() {
     {img:'/images/client/client6.png'},
   ]
   return (
-    <section className="container_gap relative h-screen bg_tech_ground">
+    <section className="container_gap h-screen bg_tech_ground">
       <Nav/>
       <div className='h-5/6 grid lg:grid-cols-2 gap-6 max-w-7xl mx-auto'>
         <div className='h-full flex flex-col items-start justify-center'>
