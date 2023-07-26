@@ -1,3 +1,4 @@
+import Features from "@/components/home/Features";
 import Login from "@/components/home/Login";
 
 export default function Home() {
@@ -5,7 +6,7 @@ export default function Home() {
     <div>
       <Login/>
       <div className="h-screen">
-        about
+        <Features/>
       </div>
     </div>
   );
