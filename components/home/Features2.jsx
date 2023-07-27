@@ -5,7 +5,7 @@ export default function Features2() {
     <div className="py-16">
         <div className="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-16">
             <h2 className="mt-4 text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
-                Why Resto Man is Best.
+                Why Resto Man.
             </h2>
             <p className='max-w-3xl mx-auto my-3 md:my-6 text-center text-gray-600 dark:text-gray-400'>
                 Experience the future of restaurant management with Resto Man - your digital solution for success.
@@ -22,11 +22,11 @@ export default function Features2() {
             </div>
             <div className="md:7/12 lg:w-1/2">
             <h2 className="text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">
-                Nuxt development is carried out by passionate developers
+                Resto Man: Your Recipe for Success in Restaurant Management
             </h2>
             <p className="my-8 text-gray-600 dark:text-gray-300">
-                Nobis minus voluptatibus pariatur dignissimos libero quaerat iure expedita at?
-                Asperiores nemo possimus nesciunt dicta veniam aspernatur quam mollitia.
+                Embrace Resto Man's innovative tools, data-driven insights, and seamless 
+                experience to unlock the full potential of your restaurant's success.
             </p>
             <div className="divide-y space-y-4 divide-gray-100 dark:divide-gray-800">
                 <div className="mt-8 flex gap-4 md:items-center">
