@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Features2() {
+export default function WhyRestoMan() {
   return (
     <div className="py-16">
         <div className="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-16">
