@@ -40,25 +40,25 @@ export default function Pricing() {
               className="m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300"
             >
               <li className="space-x-2 flex items-center">
-                <FcAdvance size={22}/>
+                <FcCheckmark size={22}/>
                 <span>Payment flexibility</span>
               </li>
               <li className="space-x-2 flex items-center">
-                <FcAdvance size={22}/>
-                <span>Food and Customer Demand Analysis</span>
+                <FcCheckmark size={22}/>
+                <span>Data Analysis</span>
               </li>
               <li className="space-x-2 flex items-center">
-                <FcAdvance size={22}/>
+                <FcCheckmark size={22}/>
                 <span>Daily Finance Reports</span>
               </li>
               <li className="space-x-2 flex items-center">
-                <FcAdvance size={22}/>
+                <FcCheckmark size={22}/>
                 <span>Email Support</span>
               </li>
             </ul>
-            <button className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
-              <span className="relative text-base font-semibold text-white dark:text-dark">
-                Start plan
+            <button className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-sky-50 before:border before:border-sky-500 dark:before:border-gray-600 dark:before:bg-gray-700 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
+              <span className="relative text-base font-semibold text-sky-600 dark:text-white">
+                Get Started
               </span>
             </button>
           </div>
@@ -115,7 +115,7 @@ export default function Pricing() {
               </li>
               <li className="space-x-2 flex items-center">
                 <FcApproval size={22}/>
-                <span>Food and Customer Demand Analysis</span>
+                <span>Data Analysis</span>
               </li>
               <li className="space-x-2 flex items-center">
                 <FcApproval size={22}/>
@@ -127,12 +127,12 @@ export default function Pricing() {
               </li>
               <li className="space-x-2 flex items-center">
                 <FcApproval size={22}/>
-                <span>Priority Email and Phone Support</span>
+                <span>Priority Email Support</span>
               </li>
             </ul>
-            <button className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
-              <span className="relative text-base font-semibold text-white dark:text-dark">
-                Start plan
+            <button className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-sky-50 before:border before:border-sky-500 dark:before:border-gray-600 dark:before:bg-gray-700 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
+              <span className="relative text-base font-semibold text-sky-600 dark:text-white">
+                Get Started
               </span>
             </button>
           </div>
@@ -163,11 +163,11 @@ export default function Pricing() {
             >
               <li className="space-x-2 flex items-center">
                 <FcCheckmark size={22}/>
-                <span>Risk-Free Trial</span>
+                <span>Risk-Free Trial (15 Days)</span>
               </li>
               <li className="space-x-2 flex items-center">
                 <FcCheckmark size={22}/>
-                <span>Food and Customer Demand Analysis (Limited)</span>
+                <span>Data Analysis (Limited)</span>
               </li>
               <li className="space-x-2 flex items-center">
                 <FcCheckmark size={22}/>

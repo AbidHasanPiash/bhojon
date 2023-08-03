@@ -44,19 +44,21 @@ export default function Login() {
                     </span>
                   </div>
                 </div>
-                <div className='mt-6'>
-                  <div className='text-center space-y-3 mb-3'>
+                <div className='mt-6 space-y-6'>
+                  <div className='text-center space-y-6'>
                     <h1 className='text-xl lg:text-3xl font-bold'>Agent Login</h1>
-                    <p className='text-xs lg:text-sm font-thin'>Please put your login credentials below.</p>
+                    <p className='text-xs lg:text-sm tracking-wider text-gray-600 dark:text-gray-400'>Please put your login credentials below.</p>
                   </div>
                   <form className='space-y-3'>
                     <input type="text" placeholder='User name' className='input_layout'/>
                     <input type="password" placeholder='Password' className='input_layout'/>
-                    <Link href={'/dashboard'} className='flex items-center justify-center'>
+                    <div className='flex items-center justify-center'>
                       <button type="submit" className="btn_layout_text">
-                        <span className="btn_text"> <HiOutlineLogin size={22}/> <span>Login</span> </span>
+                        <Link href={'/dashboard'}>
+                          <span className="btn_text"> <HiOutlineLogin size={22}/> <span>Login</span> </span>
+                        </Link>
                       </button>
-                    </Link>
+                    </div>
                   </form>
                 </div>
               </div>
