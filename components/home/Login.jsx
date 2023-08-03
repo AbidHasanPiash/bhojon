@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { BiUserCircle } from "react-icons/bi";
 import { HiOutlineLogin } from "react-icons/hi";
-import Nav from "@/components/home/Nav";
 
 export default function Login() {
   const Clients = [
@@ -15,7 +14,6 @@ export default function Login() {
   ]
   return (
     <section className="container_gap h-screen bg_tech_ground">
-      <Nav/>
       <div className='h-5/6 grid lg:grid-cols-2 gap-6 max-w-7xl mx-auto'>
         <div className='h-full flex flex-col items-start justify-center'>
           <h1 className="text-6xl lg:text-8xl font-bold still_gradient">
@@ -26,8 +24,8 @@ export default function Login() {
           <p className="mt-10 pr-20 tracking-wider text-gray-600 dark:text-gray-400 text-sm lg:text-base hidden lg:block">The ultimate digital restaurant solution, simplifying operations, enhancing efficiency, and elevating dining experiences seamlessly.</p>
           <div className="mt-10 w-full md:w-80 h-14 px-2 border border-dashed border-cyan-500 rounded-full flex items-center justify-between">
             <p className="text-center w-full">Get free trial !!</p>
-            <button className="h-10 bg-cyan-500 hover:bg-black font-bold text-black hover:text-cyan-500 duration-300 transition-colors rounded-full px-6">
-              <Link href={'#'}>
+            <button className="h-10 py-3 px-6 text-center rounded-full transition bg-cyan-300 hover:bg-cyan-100 active:bg-cyan-400 focus:bg-cyan-300 sm:w-max">
+              <Link href={'#'} className="block text-cyan-900 font-semibold text-sm px-4">
                 Contact
               </Link>
             </button>
@@ -66,12 +64,12 @@ export default function Login() {
           </div>
         </div>
       </div>
-      <div className='h-1/6'>
-        <div className="h-full w-full overflow-y-auto flex items-center justify-center space-x-6 lg:space-x-10 select-none">
+      <div className='h-1/6 z-0'>
+        <div className="h-full w-full flex items-center justify-center space-x-6 lg:space-x-10 z-0">
           {Clients.map((client, index)=>(
             <Image
               key={index}
-              className="w-10 h-10 lg:w-20 lg:h-20 object-cover dark:grayscale dark:hover:grayscale-0 hover:scale-110 transition-all duration-300"
+              className="w-10 h-10 lg:w-20 lg:h-20 dark:grayscale dark:hover:grayscale-0 hover:scale-110 transition-all duration-300 z-0"
               src={client.img}
               alt="food"
               loading="lazy"
