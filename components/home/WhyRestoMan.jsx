@@ -22,7 +22,7 @@ export default function WhyRestoMan() {
             </div>
             <div className="md:7/12 lg:w-1/2">
             <h2 className="text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">
-                Resto Man: Your Recipe for Success in Restaurant Management
+                Your Recipe for Success in Restaurant Management
             </h2>
             <p className="my-8 text-gray-600 dark:text-gray-300">
                 Embrace Resto Man's innovative tools, data-driven insights, and seamless 

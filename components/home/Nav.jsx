@@ -51,6 +51,11 @@ export default function Nav() {
                     <span>Price</span>
                   </Link>
                 </li>
+                <li>
+                  <Link href="#contsct" className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
+                    <span>Contsct</span>
+                  </Link>
+                </li>
               </ul>
             </div>
 

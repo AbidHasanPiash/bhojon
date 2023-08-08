@@ -4,6 +4,7 @@ import Footer from "@/components/home/Footer";
 import Login from "@/components/home/Login";
 import Nav from "@/components/home/Nav";
 import Pricing from "@/components/home/Pricing";
+import Contact from "@/components/home/Contact";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <section id="why"> <WhyRestoMan /> </section>
       <section id="features"> <Features /> </section>
       <section id="price"> <Pricing /> </section>
+      <section id="contsct"> <Contact/> </section>
       <Footer />
     </div>
   );
