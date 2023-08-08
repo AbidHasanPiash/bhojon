@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function WhyRestoMan() {
   return (
-    <div className="py-16">
+    <section className="py-16">
         <div className="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-16">
             <h2 className="mt-4 text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
                 Why Resto Man.
@@ -55,6 +55,6 @@ export default function WhyRestoMan() {
             </div>
         </div>
         </div>
-    </div>                                 
+    </section>                                 
   )
 }

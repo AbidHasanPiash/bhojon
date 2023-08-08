@@ -7,13 +7,13 @@ import Pricing from "@/components/home/Pricing";
 
 export default function Home() {
   return (
-    <div>
-      <Nav/>
-      <Login/>
-      <WhyRestoMan/>
-      <Features/>
-      <Pricing/>
-      <Footer/>
+    <div className="!scroll-smooth">
+      <Nav />
+      <section id="login"> <Login /> </section>
+      <section id="why"> <WhyRestoMan /> </section>
+      <section id="features"> <Features /> </section>
+      <section id="price"> <Pricing /> </section>
+      <Footer />
     </div>
   );
 }

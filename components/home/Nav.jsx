@@ -12,7 +12,7 @@ export default function Nav() {
         <div className="flex flex-wrap items-center justify-between py-3 gap-6 md:py-4 md:gap-0">
           <div className="w-full px-6 flex justify-between lg:w-max md:px-0 z-30">
             {/* Main LOGO */}
-            <Link href="#" aria-label="logo" className="flex space-x-2 items-center">
+            <Link href="#login" aria-label="logo" className="flex space-x-2 items-center">
               <Image
                 src="/images/logoo.png"
                 className="w-12"
@@ -37,18 +37,18 @@ export default function Nav() {
             <div className="text-gray-600 lg:pr-4 w-full">
               <ul className="tracking-wide font-medium  text-sm flex flex-col gap-y-6 lg:gap-y-0 lg:flex-row w-full">
                 <li>
-                  <Link href="#" className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
+                  <Link href="#why" className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
                     <span>I've a restaurant</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
-                    <span>Wishlist</span>
+                  <Link href="#features" className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
+                    <span>Futures</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
-                    <span>Cart</span>
+                  <Link href="#price" className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
+                    <span>Price</span>
                   </Link>
                 </li>
               </ul>

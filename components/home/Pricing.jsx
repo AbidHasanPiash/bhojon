@@ -2,7 +2,7 @@ import { FcApproval, FcAdvance, FcCheckmark } from "react-icons/fc";
 
 export default function Pricing() {
   return (
-    <div className="xl:container m-auto px-6 py-20 md:px-12 lg:px-20">
+    <section className="xl:container m-auto px-6 py-20 md:px-12 lg:px-20">
       <div className="m-auto text-center lg:w-7/12">
         <h2 className="text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
             Upgrade Your Restaurant Experience with Resto Man
@@ -186,6 +186,6 @@ export default function Pricing() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

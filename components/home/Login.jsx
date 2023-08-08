@@ -13,7 +13,7 @@ export default function Login() {
     {img:'/images/client/client6.png'},
   ]
   return (
-    <section className="container_gap h-screen bg_tech_ground">
+    <section id="login" className="container_gap h-screen bg_tech_ground">
       <div className='h-5/6 grid lg:grid-cols-2 gap-6 max-w-7xl mx-auto'>
         <div className='h-full flex flex-col items-start justify-center'>
           <h1 className="text-6xl lg:text-8xl font-bold still_gradient">
