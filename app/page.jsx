@@ -5,6 +5,7 @@ import Login from "@/components/home/Login";
 import Nav from "@/components/home/Nav";
 import Pricing from "@/components/home/Pricing";
 import Contact from "@/components/home/Contact";
+import Testimonials from "@/components/home/Testimonials";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <section id="features"> <Features /> </section>
       <section id="price"> <Pricing /> </section>
       <section id="contsct"> <Contact/> </section>
+      <Testimonials/>
       <Footer />
     </div>
   );
