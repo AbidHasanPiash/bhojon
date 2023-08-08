@@ -37,22 +37,22 @@ export default function Nav() {
             <div className="text-gray-600 lg:pr-4 w-full">
               <ul className="tracking-wide font-medium  text-sm flex flex-col gap-y-6 lg:gap-y-0 lg:flex-row w-full">
                 <li>
-                  <Link href="#why" className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
+                  <Link href="#why" onClick={() => setIsOpen((p)=>!p)} className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
                     <span>I've a restaurant</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="#features" className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
+                  <Link href="#features" onClick={() => setIsOpen((p)=>!p)} className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
                     <span>Futures</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="#price" className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
+                  <Link href="#price" onClick={() => setIsOpen((p)=>!p)} className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
                     <span>Price</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="#contsct" className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
+                  <Link href="#contsct" onClick={() => setIsOpen((p)=>!p)} className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
                     <span>Contsct</span>
                   </Link>
                 </li>
