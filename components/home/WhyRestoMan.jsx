@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function WhyRestoMan() {
   return (
-    <div className="py-16">
+    <section className="py-16">
         <div className="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-16">
             <h2 className="mt-4 text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
                 Why Resto Man.
@@ -22,7 +22,7 @@ export default function WhyRestoMan() {
             </div>
             <div className="md:7/12 lg:w-1/2">
             <h2 className="text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">
-                Resto Man: Your Recipe for Success in Restaurant Management
+                Your Recipe for Success in Restaurant Management
             </h2>
             <p className="my-8 text-gray-600 dark:text-gray-300">
                 Embrace Resto Man's innovative tools, data-driven insights, and seamless 
@@ -55,6 +55,6 @@ export default function WhyRestoMan() {
             </div>
         </div>
         </div>
-    </div>                                 
+    </section>                                 
   )
 }

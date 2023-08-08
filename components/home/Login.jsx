@@ -13,19 +13,19 @@ export default function Login() {
     {img:'/images/client/client6.png'},
   ]
   return (
-    <section className="container_gap h-screen bg_tech_ground">
+    <section id="login" className="container_gap h-screen bg_tech_ground">
       <div className='h-5/6 grid lg:grid-cols-2 gap-6 max-w-7xl mx-auto'>
-        <div className='h-full flex flex-col items-start justify-center'>
+        <div className='h-full flex flex-col items-start justify-end lg:justify-center'>
           <h1 className="text-6xl lg:text-8xl font-bold still_gradient">
             <span>Resto Man</span>
             <span className='text-cyan-700 dark:text-cyan-400'>.</span>
           </h1>
-          <p className='text-xl lg:text-2xl tracking-widest lg:tracking-[5px] pl-1 lg:pl-2'>Your Digital Restaurant Solution</p>
+          <p className=' md:text-xl lg:text-2xl tracking-widest lg:tracking-[5px] pl-1 lg:pl-2'>Your Digital Restaurant Solution</p>
           <p className="mt-10 pr-20 tracking-wider text-gray-600 dark:text-gray-400 text-sm lg:text-base hidden lg:block">The ultimate digital restaurant solution, simplifying operations, enhancing efficiency, and elevating dining experiences seamlessly.</p>
           <div className="mt-10 w-full md:w-80 h-14 px-2 border border-dashed border-cyan-500 rounded-full flex items-center justify-between">
             <p className="text-center w-full">Get free trial !!</p>
             <button className="h-10 py-3 px-6 text-center rounded-full transition bg-cyan-300 hover:bg-cyan-100 active:bg-cyan-400 focus:bg-cyan-300 sm:w-max">
-              <Link href={'#'} className="block text-cyan-900 font-semibold text-sm px-4">
+              <Link href="#contsct" className="block text-cyan-900 font-semibold text-sm px-4">
                 Contact
               </Link>
             </button>
