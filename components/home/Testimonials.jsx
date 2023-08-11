@@ -2,16 +2,10 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cards";
-
-//import './styles.css';
-
-// import required modules
 import { EffectCards } from "swiper/modules";
-import Image from "next/image";
+import TestimonialCard from "../common/TestimonialCard";
 
 export default function Testimonials() {
   return (
@@ -35,57 +29,21 @@ export default function Testimonials() {
                 <span>What's our clients say</span>
                 <span className='text-cyan-700 dark:text-cyan-400'>.</span>
               </h1>
-              <Swiper effect={"cards"} grabCursor={true} modules={[EffectCards]} className="w-60">
+              <Swiper effect={"cards"} grabCursor={true} modules={[EffectCards]} className="w-60 h-96">
                 <SwiperSlide>
-                  <div className="w-full h-96 rounded-2xl text-gray-900 bg-green-300">
-                    <div className="w-full h-full flex-col items-center justify-center">
-                      <div className="w-full h-3/4">
-                        <div className="flex items-center gap-2 p-3">
-                          <Image
-                            src={'/images/user.jpg'}
-                            width={40}
-                            height={40}
-                            className="rounded-full"
-                          />
-                          <h1>Cynthia J. Watts</h1>
-                        </div>
-                      </div>
-                      <div className="w-full h-1/4 border-t-2 border-dashed border-gray-900">
-                        <div>
-                          <span className="bg-slate-700 px-2">5⭐</span>
-                        </div>
-                        <div className="flex-col items-center justify-center">
-                          <Image
-                            src={'/images/common/barcode.png'}
-                            width={400}
-                            height={100}
-                            className="w-full"
-                          />
-                          <p className="text-center text-sm text-black">1 8 9 5 6 2 4 8 7 8 9</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <TestimonialCard/>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="w-full h-96 rounded-2xl p-3 text-gray-900 bg-rose-300">
-                    Slide 2
-                  </div>
+                  <TestimonialCard/>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="w-full h-96 rounded-2xl p-3 text-gray-900 bg-amber-300">
-                    Slide 3
-                  </div>
+                  <TestimonialCard/>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="w-full h-96 rounded-2xl p-3 text-gray-900 bg-gray-300">
-                    Slide 4
-                  </div>
+                  <TestimonialCard/>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="w-full h-96 rounded-2xl p-3 text-gray-900 bg-fuchsia-300">
-                    Slide 5
-                  </div>
+                  <TestimonialCard/>
                 </SwiperSlide>
               </Swiper>
             </div>
