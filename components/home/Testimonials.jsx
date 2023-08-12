@@ -71,7 +71,7 @@ export default function Testimonials() {
           {/* Swiper with Testimonials */}
           <div className="p-8 py-12 sm:p-12 overflow-hidden lg:overflow-visible rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
             <div>
-              <h1 className="text-xl text-center text-gray-600 dark:text-gray-400 font-bold md:text-3xl pb-4">
+              <h1 className="text-xl text-center text-gray-600 dark:text-gray-400 font-bold md:text-3xl pb-6">
                 <span>What's our clients say</span>
                 <span className='text-cyan-700 dark:text-cyan-400'>.</span>
               </h1>

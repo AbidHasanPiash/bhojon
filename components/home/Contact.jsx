@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SiFacebook, SiGmail, SiGithub } from "react-icons/si";
 
 export default function Contact() {
@@ -12,8 +13,11 @@ export default function Contact() {
         </p>
         <div className="container_layout lg:p-16 rounded-[4rem] space-y-6 md:flex flex-row-reverse md:gap-6 justify-center md:space-y-0 lg:items-center">
           <div className="md:5/12 lg:w-1/2 flex flex-col items-center justify-center">
-            <img
-              src="images/common/contact.png"
+            <h2 className="lg:hidden text-xl text-center text-gray-600 dark:text-gray-400 font-bold md:text-3xl pb-4">
+                Tell me about your Restaurant.
+            </h2>
+            <Image
+              src="/images/common/contact.png"
               alt="image"
               loading="lazy"
               width="200"
@@ -26,7 +30,7 @@ export default function Contact() {
             </div>
           </div>
           <div className="md:7/12 lg:w-1/2">
-            <h2 className="text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">
+            <h2 className="hidden lg:block text-xl text-gray-600 dark:text-gray-400 font-bold md:text-3xl">
                 Tell me about your Restaurant.
             </h2>
             <div className="divide-y space-y-4 divide-gray-100 dark:divide-gray-800">
