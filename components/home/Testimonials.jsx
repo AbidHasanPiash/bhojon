@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards } from "swiper/modules";
 import TestimonialCard from "../common/TestimonialCard";
+import Image from "next/image";
 
 export default function Testimonials() {
   const Testimonial = [
@@ -55,6 +56,16 @@ export default function Testimonials() {
       date: '04.06.23'
     },
   ]
+  const Client = [
+    {logo: '/images/client/client1.png'},
+    {logo: '/images/client/client2.png'},
+    {logo: '/images/client/client3.png'},
+    {logo: '/images/client/client4.png'},
+    {logo: '/images/client/client5.png'},
+    {logo: '/images/client/client6.png'},
+    {logo: '/images/client/client1.png'},
+    {logo: '/images/client/client2.png'},
+  ]
   return (
     <section className="py-16">
       <div className="container m-auto space-y-8 px-6 md:px-12 lg:px-20">
@@ -69,7 +80,7 @@ export default function Testimonials() {
         </div>
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3 md:-mx-8">
           {/* Swiper with Testimonials */}
-          <div className="p-8 py-12 sm:p-12 overflow-hidden lg:overflow-visible rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+          <div className="md:col-span-2 lg:col-span-1 p-8 py-12 sm:p-12 overflow-hidden lg:overflow-visible rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
             <div>
               <h1 className="text-xl text-center text-gray-600 dark:text-gray-400 font-bold md:text-3xl pb-6">
                 <span>What's our clients say</span>
@@ -91,63 +102,10 @@ export default function Testimonials() {
                 <span>Your favorite companies are our partners</span>
                 <span className='text-cyan-700 dark:text-cyan-400'>.</span>
               </h2>
-              <div className="grid grid-cols-3 md:grid-cols-4">
-                <div className="p-4">
-                  <img
-                    src="images/client/client1.png"
-                    className="w-32 "
-                    alt=""
-                  />
-                </div>
-                <div className="p-4">
-                  <img
-                    src="images/client/client2.png"
-                    className="w-32 "
-                    alt=""
-                  />
-                </div>
-                <div className="p-4">
-                  <img
-                    src="images/client/client3.png"
-                    className="w-32 "
-                    alt=""
-                  />
-                </div>
-                <div className="p-4">
-                  <img
-                    src="images/client/client4.png"
-                    className="w-32 "
-                    alt=""
-                  />
-                </div>
-                <div className="p-4">
-                  <img
-                    src="images/client/client5.png"
-                    className="w-32"
-                    alt=""
-                  />
-                </div>
-                <div className="p-4">
-                  <img
-                    src="images/client/client6.png"
-                    className="w-32"
-                    alt=""
-                  />
-                </div>
-                <div className="p-4">
-                  <img
-                    src="images/client/client1.png"
-                    className="w-32 "
-                    alt=""
-                  />
-                </div>
-                <div className="p-4">
-                  <img
-                    src="images/client/client2.png"
-                    className="w-32 "
-                    alt=""
-                  />
-                </div>
+              <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                {Client.map((client, index)=>(
+                  <Image key={index} className="w-32 p-4" src={client.logo} alt="client logo" width={100} height={100}/>
+                ))}
               </div>
             </div>
           </div>

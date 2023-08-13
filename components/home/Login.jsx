@@ -22,8 +22,8 @@ export default function Login() {
           </h1>
           <p className=' md:text-xl lg:text-2xl tracking-widest lg:tracking-[5px] pl-1 lg:pl-2'>Your Digital Restaurant Solution</p>
           <p className="mt-10 pr-20 tracking-wider text-gray-600 dark:text-gray-400 text-sm lg:text-base hidden lg:block">The ultimate digital restaurant solution, simplifying operations, enhancing efficiency, and elevating dining experiences seamlessly.</p>
-          <div className="mt-10 w-full md:w-80 h-14 px-2 border border-dashed border-cyan-500 rounded-full flex items-center justify-between">
-            <p className="text-center w-full">Get free trial !!</p>
+          <div className="mt-10 w-full md:w-80 h-14 px-2 border-2 border-dashed border-cyan-500 rounded-full flex items-center justify-between">
+            <p className="text-center w-full font-bold">Get a free trial !!</p>
             <button className="h-10 py-3 px-6 text-center rounded-full transition bg-cyan-300 hover:bg-cyan-100 active:bg-cyan-400 focus:bg-cyan-300 sm:w-max">
               <Link href="#contsct" className="block text-cyan-900 font-semibold text-sm px-4">
                 Contact
