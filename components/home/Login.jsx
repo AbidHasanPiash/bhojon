@@ -47,9 +47,9 @@ export default function Login() {
                     <h1 className='text-xl lg:text-3xl font-bold'>Agent Login</h1>
                     <p className='text-xs lg:text-sm tracking-wider text-gray-600 dark:text-gray-400'>Please put your login credentials below.</p>
                   </div>
-                  <form className='space-y-3'>
-                    <input type="text" placeholder='User name' className='input_layout'/>
-                    <input type="password" placeholder='Password' className='input_layout'/>
+                  <form className='space-y-3 lg:space-y-8'>
+                    <input type="text" placeholder='User name' className='input_layout lg:h-12'/>
+                    <input type="password" placeholder='Password' className='input_layout lg:h-12'/>
                     <div className='flex items-center justify-center'>
                       <button type="submit" className="btn_layout_text">
                         <Link href={'/dashboard'}>
