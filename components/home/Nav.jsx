@@ -60,15 +60,17 @@ export default function Nav() {
             </div>
 
             <div  className="w-full min-w-max space-y-2 border-cyan-200 lg:space-y-0 sm:w-max lg:border-l-2 dark:lg:border-cyan-700 pl-4">
-              <button
-                type="button"
-                title="Start buying"
-                className="w-full py-3 px-6 text-center rounded-full transition bg-cyan-300 hover:bg-cyan-100 active:bg-cyan-400 focus:bg-cyan-300 sm:w-max"
-              >
-                <span className="block text-cyan-900 font-semibold text-sm px-4">
-                  Buy
-                </span>
-              </button>
+              <Link href={'/purchase'}>
+                <button
+                  type="button"
+                  title="Start buying"
+                  className="w-full py-3 px-6 text-center rounded-full transition bg-cyan-300 hover:bg-cyan-100 active:bg-cyan-400 focus:bg-cyan-300 sm:w-max"
+                >
+                  <span className="block text-cyan-900 font-semibold text-sm px-4">
+                    Buy
+                  </span>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
