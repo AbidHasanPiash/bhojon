@@ -8,10 +8,6 @@ import { useState } from 'react'
 import { usePathname  } from 'next/navigation';
 
 const inter = Inter({ subsets: ['latin'] })
-export const metadata = {
-  title: 'Resto Man.',
-  description: 'our Digital Restaurant Solution.',
-}
 
 export default function RootLayout({ children }) {
   const path = usePathname();
@@ -19,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <title>{metadata.title}</title>
+        <title>Resto Man.</title>
         
         {/* Open Graph tags for social sharing */}
         <meta property="og:title" content="RestoMan: Restaurant Management System" />
