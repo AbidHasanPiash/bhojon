@@ -29,9 +29,9 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${inter.className} body_and_text_color`}>
         <SidebarContext.Provider value={{isSidebarOpen, setSidebarOpen}}>
-          {path !== '/' && <Nav/>}
-          <div className={path !== '/' && 'ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]'}>
-            {path !== '/' && <Header/>}
+          {path !== '/' && path !== '/purchase' && <Nav/>}
+          <div className={path !== '/' &&  path !== '/purchase' && 'ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]'}>
+            {path !== '/' &&  path !== '/purchase' &&<Header/>}
             {children}
           </div>
         </SidebarContext.Provider>
