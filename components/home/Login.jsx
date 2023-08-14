@@ -13,7 +13,7 @@ export default function Login() {
     {img:'/images/client/client6.png'},
   ]
   return (
-    <section id="login" className="container_gap h-screen bg_tech_ground">
+    <section id="login" className="container_gap mt-20 lg:mt-0 h-screen bg_tech_ground">
       <div className='h-5/6 grid lg:grid-cols-2 gap-6 max-w-7xl mx-auto'>
         <div className='h-full flex flex-col items-start justify-end lg:justify-center'>
           <h1 className="text-6xl lg:text-8xl font-bold still_gradient">
@@ -31,7 +31,7 @@ export default function Login() {
             </button>
           </div>
         </div>
-        <div className='flex items-center justify-center md:mx-6 lg:mx-12'>
+        <div className='flex items-center justify-center md:mx-6 lg:mx-12 mt-20 lg:mt-0'>
           <div className='flex flex-col items-center'>
             <div className='rounded-3xl hover:shadow-2xl hover:shadow-cyan-800'>
               <div className="container_layout2 w-full">
@@ -64,7 +64,7 @@ export default function Login() {
           </div>
         </div>
       </div>
-      <div className='h-1/6 z-0'>
+      <div className='hidden lg:block lg:h-1/6 z-0'>
         <div className="h-full w-full flex items-center justify-center space-x-6 lg:space-x-10 z-0">
           {Clients.map((client, index)=>(
             <Image
