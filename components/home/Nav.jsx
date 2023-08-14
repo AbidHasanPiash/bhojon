@@ -26,8 +26,8 @@ export default function Nav() {
               </span>
             </Link>
             {/* Hamburger buttom */}
-            <div className="flex items-center lg:hidden max-h-10">
-              <button onClick={() => setIsOpen((p)=>!p)} className="md:hidden flex flex-col h-6 w-12 justify-center items-center group" >
+            <div className="flex items-center max-h-10">
+              <button onClick={() => setIsOpen((p)=>!p)} className="lg:hidden flex flex-col h-6 w-12 justify-center items-center group" >
                 <div className={`${hamburgerLine} ${ isOpen && " rotate-45 translate-y-1.5 "}`}/>
                 <div className={`${hamburgerLine} ${ isOpen && "-rotate-45 -translate-y-1.5"}`}/>
               </button>
