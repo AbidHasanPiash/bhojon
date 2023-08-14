@@ -68,10 +68,19 @@ export default function page() {
             <div className="container m-auto space-y-8 px-6 text-gray-500 md:px-12 lg:px-20">
                 <div className="gap-6 text-center md:flex md:text-left lg:gap-16">
                     <div className="order-last mb-6 space-y-6 md:mb-0 md:w-6/12 lg:w-6/12">
-                        <div className='flex items-center justify-between pb-8'>
-                            <button onClick={() => handlePackageSelect('Monthly')}>Monthly</button>
-                            <button onClick={() => handlePackageSelect('Annual')}>Annual</button>
-                            <button onClick={() => handlePackageSelect('Free')}>Free</button>
+                        <div className='flex items-center justify-between space-x-4 pb-8 text-gray-800 dark:text-gray-200'>
+                            <button onClick={() => handlePackageSelect('Monthly')} className='group relative w-full py-2 flex items-center justify-center'>
+                                <span>Monthly</span>
+                                <span className={`${selectedPackage=='Monthly' ? 'border-cyan-500 border-b-4' : 'border-b-0'} absolute bottom-0 w-full h-1 group-hover:h-full transition-all duration-200 bg-cyan-400/20`}/>
+                            </button>
+                            <button onClick={() => handlePackageSelect('Annual')} className='group relative w-full py-2 flex items-center justify-center'>
+                                <span>Annual</span>
+                                <span className={`${selectedPackage=='Annual' ? 'border-cyan-500 border-b-4' : 'border-b-0'} absolute bottom-0 w-full h-1 group-hover:h-full transition-all duration-200 bg-cyan-400/20`}/>
+                            </button>
+                            <button onClick={() => handlePackageSelect('Free')} className='group relative w-full py-2 flex items-center justify-center'>
+                                <span>Free</span>
+                                <span className={`${selectedPackage=='Free' ? 'border-cyan-500 border-b-4' : 'border-b-0'} absolute bottom-0 w-full h-1 group-hover:h-full transition-all duration-200 bg-cyan-400/20`}/>
+                            </button>
                         </div>
                         <h1 className="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white">
                             {selectedPackage == 'Monthly' && "Feature-Rich Monthly Flexibility with"}
