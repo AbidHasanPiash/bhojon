@@ -19,8 +19,7 @@ export default function RootLayout({ children }) {
         
         {/* Open Graph tags for social sharing */}
         <meta property="og:title" content="RestoMan: Restaurant Management System" />
-        <meta property="og:description" content="Effortlessly streamline restaurant operations, 
-        manage customer insights, and drive growth with RestoMan's intuitive digital solutions." />
+        <meta property="og:description" content="The ultimate digital restaurant solution, simplifying operations, enhancing efficiency, and elevating dining experiences seamlessly." />
         <meta property="og:image" content="/logos/rm_main.png" />
       </head>
       <body className={`${inter.className} body_and_text_color`}>
