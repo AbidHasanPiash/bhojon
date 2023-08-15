@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <meta property="og:title" content="RestoMan: Restaurant Management System" />
         <meta property="og:description" content="Effortlessly streamline restaurant operations, 
         manage customer insights, and drive growth with RestoMan's intuitive digital solutions." />
-        <meta property="og:image" content="/images/logo.png" />
+        <meta property="og:image" content="/logos/rm_main.png" />
       </head>
       <body className={`${inter.className} body_and_text_color`}>
         <SidebarContext.Provider value={{isSidebarOpen, setSidebarOpen}}>
