@@ -123,12 +123,12 @@ export default function page() {
                             </div>
                         </div>
                         <div className="flex flex-wrap gap-6">
-                            <button href="#" className="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
-                                <span className="relative text-base font-semibold text-white dark:text-dark">Shop now</span>
-                            </button>
                             <button href="#" className="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max">
-                                <span className="relative text-base font-semibold text-primary dark:text-white">More about</span>
+                                <span className="relative text-base font-semibold text-cyan-400 ">Order Now</span>
                             </button>
+                            <Link href="/#price" className="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max">
+                                <span className="relative text-base font-semibold text-gray-600 dark:text-gray-300">More about</span>
+                            </Link>
                         </div>
                     </div>
                     {/* Feature Images */}
