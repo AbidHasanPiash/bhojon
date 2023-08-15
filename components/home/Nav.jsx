@@ -14,13 +14,13 @@ export default function Nav() {
             {/* Main LOGO */}
             <Link href="#login" aria-label="logo" className="flex space-x-2 items-center">
               <Image
-                src="/images/logoo.png"
-                className="w-12"
+                src="/logos/rm_mini_light.png"
+                className="w-8 lg:w-12"
                 alt="tailus logo"
                 width="144"
                 height="133"
               />
-              <span className="text-2xl font-bold text-cyan-900 dark:text-white">
+              <span className="text-xl lg:text-2xl font-bold text-cyan-900 dark:text-white">
                 Resto{" "}
                 <span className="text-cyan-700 dark:text-cyan-300">Man.</span>
               </span>
