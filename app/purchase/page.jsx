@@ -6,11 +6,13 @@ import {FaCcMastercard, FaCcVisa, FaCcPaypal} from 'react-icons/fa'
 
 export default function page() {
     const [selectedPackage, setSelectedPackage] = useState('Monthly');
-  
+    const [paymentOption, setPaymentOption] = useState(null);
     const handlePackageSelect = (packageType) => {
       setSelectedPackage(packageType);
-      // Update payment balance here
     };
+    const handlePaymentOption = (option) => {
+        setPaymentOption(option);
+    }
   return (
     <section>
         {/* Heading text and images */}
@@ -102,10 +104,22 @@ export default function page() {
                         </h1>
                         <div className="text-lg text-gray-600 dark:text-gray-300">
                             <p>Select your payment method.</p>
-                            <div className='flex space-x-3'>
-                                <span><FaCcMastercard size={30}/></span>
-                                <span><FaCcVisa size={30}/></span>
-                                <span><FaCcPaypal size={30}/></span>
+                            <div className='flex items-center justify-center md:justify-start space-x-3 pt-3'>
+                                <button 
+                                    onClick={()=> handlePaymentOption('master')} 
+                                    className={`${paymentOption == 'master' && 'ring-2 ring-cyan-400'} hover:text-cyan-400 rounded-lg py-0.5 px-2`}>
+                                    <FaCcMastercard size={40}/>
+                                </button>
+                                <button 
+                                    onClick={()=> handlePaymentOption('visa')} 
+                                    className={`${paymentOption == 'visa' && 'ring-2 ring-cyan-400'} hover:text-cyan-400 rounded-lg py-0.5 px-2`}>
+                                    <FaCcVisa size={40}/>
+                                </button>
+                                <button 
+                                    onClick={()=> handlePaymentOption('paypal')} 
+                                    className={`${paymentOption == 'paypal' && 'ring-2 ring-cyan-400'} hover:text-cyan-400 rounded-lg py-0.5 px-2`}>
+                                    <FaCcPaypal size={40}/>
+                                </button>
                             </div>
                         </div>
                         <div className="flex flex-wrap gap-6">
