@@ -1,11 +1,14 @@
 'use client'
-import Image from 'next/image';
+import { useRouter, useSearchParams  } from 'next/navigation';
+import { useState } from 'react';
 import Link from 'next/link';
-import React, { useState } from 'react'
 import {FaCcMastercard, FaCcVisa, FaCcPaypal} from 'react-icons/fa'
 
 export default function page() {
-    const [selectedPackage, setSelectedPackage] = useState('Monthly');
+    const router = useRouter();
+    const searchParams = useSearchParams()
+    const plan = searchParams.get('plan');
+    const [selectedPackage, setSelectedPackage] = useState(plan);
     const [paymentOption, setPaymentOption] = useState(null);
     const handlePackageSelect = (packageType) => {
       setSelectedPackage(packageType);
@@ -66,8 +69,8 @@ export default function page() {
                         Embark on a journey to elevate your restaurant's success. <br /> Join Resto Man today.
                     </p>
                     <p className='text-center'>-or-</p>
-                    <p className="text-center text-xl text-gray-600 dark:text-gray-300 hover:underline underline-offset-4 hover:text-rose-400">
-                        <Link href={'/'}>Change of plan, Let me go !</Link>
+                    <p className="text-center cursor-pointer text-xl text-gray-600 dark:text-gray-300 hover:underline underline-offset-4 hover:text-rose-400">
+                        <span onClick={()=>router.back()}>Change of plan, Let me go !</span>
                     </p>
                 </div>
             </div>
@@ -79,27 +82,27 @@ export default function page() {
                     {/* Plan and payment options */}
                     <div className="order-last mb-6 space-y-6 md:mb-0 md:w-6/12 lg:w-6/12">
                         <div className='flex items-center justify-between space-x-4 pb-8 text-gray-800 dark:text-gray-200'>
-                            <button onClick={() => handlePackageSelect('Monthly')} className='group relative w-full py-2 flex items-center justify-center'>
+                            <button onClick={() => handlePackageSelect('monthly')} className='group relative w-full py-2 flex items-center justify-center'>
                                 <span>Monthly</span>
-                                <span className={`${selectedPackage=='Monthly' ? 'border-cyan-500 border-b-4' : 'border-b-0'} absolute bottom-0 w-full h-1 group-hover:h-full transition-all duration-200 bg-cyan-400/20`}/>
+                                <span className={`${selectedPackage=='monthly' ? 'border-cyan-500 border-b-8' : 'border-b-0'} absolute bottom-0 w-full h-1 group-hover:h-full transition-all duration-200 bg-cyan-400/20`}/>
                             </button>
-                            <button onClick={() => handlePackageSelect('Annual')} className='group relative w-full py-2 flex items-center justify-center'>
+                            <button onClick={() => handlePackageSelect('annual')} className='group relative w-full py-2 flex items-center justify-center'>
                                 <span>Annual</span>
-                                <span className={`${selectedPackage=='Annual' ? 'border-cyan-500 border-b-4' : 'border-b-0'} absolute bottom-0 w-full h-1 group-hover:h-full transition-all duration-200 bg-cyan-400/20`}/>
+                                <span className={`${selectedPackage=='annual' ? 'border-cyan-500 border-b-8' : 'border-b-0'} absolute bottom-0 w-full h-1 group-hover:h-full transition-all duration-200 bg-cyan-400/20`}/>
                             </button>
-                            <button onClick={() => handlePackageSelect('Free')} className='group relative w-full py-2 flex items-center justify-center'>
+                            <button onClick={() => handlePackageSelect('free')} className='group relative w-full py-2 flex items-center justify-center'>
                                 <span>Free</span>
-                                <span className={`${selectedPackage=='Free' ? 'border-cyan-500 border-b-4' : 'border-b-0'} absolute bottom-0 w-full h-1 group-hover:h-full transition-all duration-200 bg-cyan-400/20`}/>
+                                <span className={`${selectedPackage=='free' ? 'border-cyan-500 border-b-8' : 'border-b-0'} absolute bottom-0 w-full h-1 group-hover:h-full transition-all duration-200 bg-cyan-400/20`}/>
                             </button>
                         </div>
                         <h1 className="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white">
-                            {selectedPackage == 'Monthly' && "Feature-Rich Monthly Flexibility with"}
-                            {selectedPackage == 'Annual' && "Savings, Full Access Annually and get"}
-                            {selectedPackage == 'Free' && "Basic Features, Limited Time for"}
+                            {selectedPackage == 'monthly' && "Feature-Rich Monthly Flexibility with"}
+                            {selectedPackage == 'annual' && "Savings, Full Access Annually and get"}
+                            {selectedPackage == 'free' && "Basic Features, Limited Time for"}
                             <span className="text-primary dark:text-sky-300">
-                                {selectedPackage == 'Monthly' && " 10% off"}
-                                {selectedPackage == 'Annual' && " 20% off"}
-                                {selectedPackage == 'Free' && " Zero Cost"}
+                                {selectedPackage == 'monthly' && " 10% off"}
+                                {selectedPackage == 'annual' && " 20% off"}
+                                {selectedPackage == 'free' && " Zero Cost"}
                             </span>
                         </h1>
                         <div className="text-lg text-gray-600 dark:text-gray-300">
@@ -123,7 +126,7 @@ export default function page() {
                             </div>
                         </div>
                         <div className="flex flex-wrap gap-6">
-                            <button href="#" className="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max">
+                            <button href="#" className="relative flex h-12 w-full items-center justify-center px-8 border-cyan-400 before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max">
                                 <span className="relative text-base font-semibold text-cyan-400 ">Order Now</span>
                             </button>
                             <Link href="/#price" className="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max">

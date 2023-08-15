@@ -1,9 +1,23 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useEffect, useState } from 'react';
 
 export default function Nav() {
+  const [systemTheme, setSystemTheme] = useState('dark');
+  useEffect(() => {
+    const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleThemeChange = (event) => {
+      setSystemTheme(event.matches ? 'dark' : 'light');
+    };
+    darkModeQuery.addEventListener('change', handleThemeChange);
+    return () => {
+      darkModeQuery.removeEventListener('change', handleThemeChange);
+    };
+  }, []);
+
+  const imagePath = `/logos/rm_mini_${systemTheme === 'dark' ? 'light' : 'dark'}.png`;
+
   const [isOpen, setIsOpen] = useState(false);
   const hamburgerLine = `h-1 w-6 my-1 rounded-full bg-cyan-700 dark:bg-cyan-300 transition ease transform duration-300`;
   return (
@@ -14,7 +28,7 @@ export default function Nav() {
             {/* Main LOGO */}
             <Link href="#login" aria-label="logo" className="flex space-x-2 items-center">
               <Image
-                src="/logos/rm_mini_light.png"
+                src={imagePath}
                 className="w-8 lg:w-12"
                 alt="tailus logo"
                 width="144"
@@ -77,4 +91,19 @@ export default function Nav() {
       </div>
     </nav>
   );
+}
+export async function getStaticProps() {
+  let systemTheme = 'light'; // Default to light if unable to determine
+
+  if (typeof window !== 'undefined') {
+    const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    systemTheme = darkModeQuery.matches ? 'dark' : 'light';
+    console.log('Detected System Theme:', systemTheme);
+  }
+
+  return {
+    props: {
+      systemTheme,
+    },
+  };
 }

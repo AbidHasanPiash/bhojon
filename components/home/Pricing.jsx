@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FcApproval, FcAdvance, FcCheckmark } from "react-icons/fc";
 
 export default function Pricing() {
@@ -35,10 +36,7 @@ export default function Pricing() {
                 / Month
               </span>
             </div>
-            <ul
-              role="list"
-              className="m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300"
-            >
+            <ul role="list" className="m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300">
               <li className="space-x-2 flex items-center">
                 <FcCheckmark size={22}/>
                 <span>Payment flexibility</span>
@@ -56,11 +54,13 @@ export default function Pricing() {
                 <span>Email Support</span>
               </li>
             </ul>
+            <Link href={'/purchase?plan=monthly'}>
             <button className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-sky-50 before:border before:border-sky-500 dark:before:border-gray-600 dark:before:bg-gray-700 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
               <span className="relative text-base font-semibold text-sky-600 dark:text-white">
                 Get Started
               </span>
             </button>
+            </Link>
           </div>
         </div>
 
@@ -101,14 +101,11 @@ export default function Pricing() {
               <span className="block text-center text-xs uppercase text-primary">
                 BILLED YEARLY
               </span>
-              <span className="m-auto mt-4 block w-max rounded-full bg-gradient-to-r from-yellow-300 to-pink-300 px-4 py-1 text-sm font-medium text-yellow-900">
+              <span className="m-auto mt-4 block w-max rounded-full bg-gradient-to-r from-cyan-300 via-red-300 to-amber-300 px-4 py-1 text-sm font-medium text-black">
                 1 Discount applied
               </span>
             </div>
-            <ul
-              role="list"
-              className="m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300"
-            >
+            <ul role="list" className="m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300">
               <li className="space-x-2 flex items-center">
                 <FcApproval size={22}/>
                 <span>Cost Savings</span>
@@ -130,11 +127,13 @@ export default function Pricing() {
                 <span>Priority Email Support</span>
               </li>
             </ul>
-            <button className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-sky-50 before:border before:border-sky-500 dark:before:border-gray-600 dark:before:bg-gray-700 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
-              <span className="relative text-base font-semibold text-sky-600 dark:text-white">
-                Get Started
-              </span>
-            </button>
+            <Link href={'/purchase?plan=annual'}>
+              <button className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-sky-50 before:border before:border-sky-500 dark:before:border-gray-600 dark:before:bg-gray-700 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
+                <span className="relative text-base font-semibold text-sky-600 dark:text-white">
+                  Get Started
+                </span>
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -157,10 +156,7 @@ export default function Pricing() {
                 </span>
               </div>
             </div>
-            <ul
-              role="list"
-              className="m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300"
-            >
+            <ul role="list" className="m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300">
               <li className="space-x-2 flex items-center">
                 <FcCheckmark size={22}/>
                 <span>Risk-Free Trial (15 Days)</span>
@@ -178,11 +174,13 @@ export default function Pricing() {
                 <span>Email Support</span>
               </li>
             </ul>
-            <button className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-sky-50 before:border before:border-sky-500 dark:before:border-gray-600 dark:before:bg-gray-700 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
-              <span className="relative text-base font-semibold text-sky-600 dark:text-white">
-                Get Started
-              </span>
-            </button>
+            <Link href={'/purchase?plan=free'}>
+              <button className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-sky-50 before:border before:border-sky-500 dark:before:border-gray-600 dark:before:bg-gray-700 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
+                <span className="relative text-base font-semibold text-sky-600 dark:text-white">
+                  Get Started
+                </span>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
