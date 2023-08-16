@@ -4,12 +4,14 @@ import ExpenseRow from '@/components/finance/ExpenseRow';
 import { HiPlusCircle, HiSave } from 'react-icons/hi';
 
 export default function Finance() {
+  // Date relate
   const date = new Date();
   const options = { day: 'numeric', month: 'short', year: 'numeric' };
   const currentDate = date.toLocaleString('en-US', options);
+  // Calculation related
   const [expenses, setExpenses] = useState([{ category: 'Food', description: '', amount: '' },]);
   const [opening, setOpening] = useState(100);
-  const [invest, setInvest] = useState();
+  const [invest, setInvest] = useState(0);
   const [dailySales, setDailySales] = useState(50);
   const [closing, setClosing] = useState(opening + dailySales);
   const [totalExpenses, setTotalExpenses] = useState(0)
@@ -19,6 +21,8 @@ export default function Finance() {
     setExpenses(newExpenses);
   };
   const handleAddInput = () => {
+    const total = expenses.reduce((acc, expense) => acc + Number(expense.amount), 0);
+    setTotalExpenses(total);
     setExpenses([...expenses, { category: 'Food', description: '', amount: '' }]);
   };
   const handleRemoveInput = (index) => {
@@ -29,8 +33,7 @@ export default function Finance() {
   const handleSaveData = () => {
     const total = expenses.reduce((acc, expense) => acc + Number(expense.amount), 0);
     setTotalExpenses(total);
-    setClosing(opening + Number(invest) + dailySales - total);
-    console.log(totalExpenses);
+    setClosing(opening + invest + dailySales - total);
   };
   const handleInvest = (e) => {
     const value = Number(e.target.value);
@@ -47,8 +50,8 @@ export default function Finance() {
         <div className='container_layout lg:col-span-3'>
           {/* Header */}
           <div className='flex items-center space-x-6 text-xl font-bold md:text-3xl'>
-            <h1>Today's Balance Inquiry.</h1>
-            <h1 className='input_layout2 w-28 text-center'>{currentDate}</h1>
+            <h1>Balance Inquiry.</h1>
+            <h1 className='input_layout2 w-fit text-center'>{currentDate}</h1>
           </div>
           {/* Costing and liability */}
           <div className='modal_body_element space-y-2'>

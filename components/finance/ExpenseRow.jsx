@@ -33,7 +33,7 @@ export default function ExpenseRow({ index, category, description, amount, onCha
         placeholder='amount'
         className='input_layout2 w-24'
         value={amount}
-        onChange={handleAmountChange}
+        onChange={(e) => onChange(index, 'amount', e.target.value)}
       />
       <button className="btn_layout_icon" onClick={() => onRemove(index)}>
         <span className="btn_icon px-2"><HiTrash size={22}/></span>
