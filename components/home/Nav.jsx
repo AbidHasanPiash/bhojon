@@ -22,7 +22,7 @@ export default function Nav() {
   const hamburgerLine = `h-1 w-6 my-1 rounded-full bg-cyan-700 dark:bg-cyan-300 transition ease transform duration-300`;
   return (
     <nav className="z-50 w-full absolute bg-transparent">
-      <div className="container fixed top-0 left-0 right-0 m-auto px-2 md:px-12 lg:px-7 backdrop-blur-md bg-white/10 rounded-b-xl">
+      <div className="container fixed top-0 left-0 right-0 m-auto px-2 md:px-12 lg:px-7 backdrop-blur-md bg-black/5 dark:bg-white/10 rounded-b-xl">
         <div className="flex flex-wrap items-center justify-between py-3 gap-6 md:py-4 md:gap-0">
           <div className="w-full px-6 flex justify-between lg:w-max md:px-0 z-30">
             {/* Main LOGO */}
