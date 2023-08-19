@@ -7,11 +7,8 @@ export default function Report() {
     // Date relate
     const date = new Date();
     const currentDate = date.toISOString().split('T')[0];
-
     const [selectedDate, setSelectedDate] = useState({ startDate:null, endDate:null }); 
-    const handleValueChange = (newValue) => {
-        setSelectedDate(newValue);
-    } 
+    const handleValueChange = (newValue) => {setSelectedDate(newValue);} 
     const [reports, setReports] = useState([
       {id:1, date:'2023-08-19', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
       {id:1, date:'2023-08-18', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
@@ -19,8 +16,24 @@ export default function Report() {
       {id:1, date:'2023-08-16', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
       {id:1, date:'2023-08-15', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
       {id:1, date:'2023-08-14', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
+      {id:1, date:'2023-08-13', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
+      {id:1, date:'2023-08-12', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
+      {id:1, date:'2023-08-11', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
+      {id:1, date:'2023-08-10', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
+      {id:1, date:'2023-08-09', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
+      {id:1, date:'2023-08-08', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
+      {id:1, date:'2023-08-07', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
+      {id:1, date:'2023-08-06', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
+      {id:1, date:'2023-08-05', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
     ]);
-    const filtered = reports.filter(report => report.date >= selectedDate.startDate && report.date <= selectedDate.endDate);
+    let filteredReports = reports;
+    if (selectedDate.startDate !== null && selectedDate.endDate !== null) {
+      filteredReports = reports.filter(
+        (report) =>
+          report.date >= selectedDate.startDate &&
+          report.date <= selectedDate.endDate
+      );
+    }
   return (
     <div className="space-y-6">
         {/* Header */}
@@ -54,7 +67,7 @@ export default function Report() {
               </tr>
             </thead>
             <tbody>
-              {filtered.map((order, index)=>(
+              {filteredReports.map((order, index)=>(
                 <TableRow key={index} index={index} row={order} reports={reports}/>
               ))}
             </tbody>
