@@ -15,7 +15,7 @@ export default function Table({index, status}) {
         `}>
             {status}
         </div>
-        <button className="absolute top-1.5 right-2 group-hover:block hidden">
+        <button className="absolute -top-4 -right-4 group-hover:top-1.5 group-hover:right-2 transition-all duration-300">
             <span className="text-gray-600 dark:text-gray-300 hover:text-red-500"><HiTrash/></span>
         </button>
     </div>
