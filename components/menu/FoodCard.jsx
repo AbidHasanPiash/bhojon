@@ -16,7 +16,7 @@ export default function FoodCard({item, category, deleteItem, editItem}) {
   return (
     <div className="group relative h-60 rounded-2xl overflow-hidden">
       <Image
-        className="w-full h-40 object-cover group-hover:scale-110 transition-all duration-300"
+        className="w-full h-40 object-cover overflow-hidden group-hover:scale-110 transition-all duration-300"
         src={item.image ? item.image : '/images/user.jpg'}
         alt="food"
         loading="lazy"
