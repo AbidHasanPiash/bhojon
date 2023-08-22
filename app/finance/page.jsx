@@ -56,6 +56,11 @@ export default function Finance() {
   const handleAddExpenceType = (value) => {
     setExpenceType([...expenceType, { value: value }]);
   };
+  const handleUpdateExpenceType = (index, type) => {
+    const newExpenseType = [...expenceType];
+    newExpenseType[index].value = [type];
+    setExpenceType(newExpenseType);
+  };
   const handleRemoveExpenceType = (index) => {
     if (index !== 0) {
       const newType = [...expenceType];
@@ -87,8 +92,9 @@ export default function Finance() {
             closing={closing}/>
           <ExpenceType 
             values= {expenceType}
+            setValues={handleAddExpenceType}
             onRemove= {handleRemoveExpenceType}
-            setValues={handleAddExpenceType}/>
+            onUpdate= {handleUpdateExpenceType}/>
         </div>
       </div>
     </div>

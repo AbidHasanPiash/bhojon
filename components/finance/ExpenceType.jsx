@@ -3,20 +3,41 @@ import React, { useState } from 'react'
 import { BiDownArrow} from 'react-icons/bi'
 import { HiPencilAlt, HiTrash, HiPlusCircle, HiSave } from 'react-icons/hi'
 
-export function TypeComp({value, index, onRemove}) {
+export function TypeComp({value, index, onRemove, onUpdate}) {
   const [isEditing, setIsEditing] = useState(false);
+  const [editedType, setEditedType] = useState(value.value);
+  const submitEditedValue = () => {
+    if (editedType.trim() !== '') {
+      onUpdate(index, editedType);
+      setIsEditing(false);
+    }
+  }
   return(
     <div className='grid grid-cols-6 p-2 rounded-xl border border-gray-200/50 dark:border-gray-700'>
-      <div className='col-span-4 flex space-x-2 w-full'>
+      <div className='col-span-4 flex space-x-1'>
         <span>{index+1}.</span>
-        <form onSubmit={''} className='flex-wrap w-full'>
-          <input type="text" value={value.value} className='bg-transparent w-2/3'/>
-        </form>
+        {isEditing ?
+          <form onSubmit={submitEditedValue} className='flex-wrap w-full'>
+            <input 
+              type="text" 
+              value={editedType} 
+              onChange={(e) => setEditedType(e.target.value)}
+              className='bg-transparent w-2/3 px-1.5 outline-none rounded ring-1 ring-blue-500'/>
+          </form>
+          :
+          <p className='px-1.5'>{value.value}</p>
+        }
       </div>
       <div className='col-span-2 flex items-center justify-end space-x-6'>
-        <span onClick={()=>setIsEditing((p)=>!p)} className={`${isEditing?'text-blue-500':'hover:text-blue-500'}  cursor-pointer`}>
-          {isEditing ? <HiSave/> : <HiPencilAlt/> }
-        </span>
+        {isEditing ?
+          <span onClick={submitEditedValue} className={`${isEditing?'text-blue-500':'hover:text-blue-500'}  cursor-pointer`}>
+            <HiSave/>
+          </span>
+          :
+          <span onClick={()=>setIsEditing(true)} className={`${isEditing?'text-blue-500':'hover:text-blue-500'}  cursor-pointer`}>
+            <HiPencilAlt/>
+          </span>
+        }
         <span className='hover:text-red-500 cursor-pointer'>
           <HiTrash onClick={() => onRemove(index)}/>
         </span>
@@ -25,15 +46,14 @@ export function TypeComp({value, index, onRemove}) {
   )
 }
 
-export default function ExpenceType({values, setValues, onRemove}) {
+export default function ExpenceType({values, setValues, onRemove, onUpdate}) {
     const [expand, setExpand] = useState(false);
     const [addEnable, setAddEnable] = useState(false);
     const [newExpenseType, setNewExpenseType] = useState('');  
     const handleSaveExpenseTypes = () => {
       if (newExpenseType.trim() !== '') {
-        const updatedValues = newExpenseType;
         setNewExpenseType('');
-        setValues(updatedValues);
+        setValues(newExpenseType);
       }
       setNewExpenseType('');
       setAddEnable(false);
@@ -53,7 +73,7 @@ export default function ExpenceType({values, setValues, onRemove}) {
       <div className={`space-y-6 ${expand?'block':'hidden lg:block'}`}>
         <div className='space-y-3'>
           {values.map((value, i)=>(
-            <TypeComp key={i} index={i} value={value} onRemove={onRemove}/>
+            <TypeComp key={i} index={i} value={value} onRemove={onRemove} onUpdate={onUpdate}/>
           ))}
         </div>
         {/* Footer Section */}
