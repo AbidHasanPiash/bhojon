@@ -7,6 +7,7 @@ export default function ExpenceType({values}) {
     const [expand, setExpand] = useState(false)
   return (
     <div className='container_layout2 space-y-6'>
+      {/* Header section */}
       <div className='flex items-center justify-between'>
         <h1 className='text-xl font-bold md:text-3xl'>Expence Type.</h1>
         <button onClick={()=>setExpand((p)=>!p)} className="btn_layout_icon lg:hidden">
@@ -15,6 +16,7 @@ export default function ExpenceType({values}) {
           </span>
         </button>
       </div>
+      {/* Body section */}
       <div className={`space-y-6 ${expand?'block':'hidden lg:block'}`}>
         <div className='space-y-3'>
           {values.map((value, i)=>(
@@ -30,6 +32,7 @@ export default function ExpenceType({values}) {
             </div>
           ))}
         </div>
+        {/* Footer Section */}
         <div className='flex items-center justify-center space-x-3'>
           <button className='btn_layout_text'>
             <span className='btn_text'>
