@@ -12,7 +12,15 @@ export default function Finance() {
   const options = { day: 'numeric', month: 'short', year: 'numeric' };
   const currentDate = date.toLocaleString('en-US', options);
   // Calculation related
-  const [expenses, setExpenses] = useState([{ category: 'Food', description: '', amount: '' },]);
+  const expenceCategory = [
+    {value:'Food',},
+    {value:'Labor',},
+    {value:'Rent',},
+    {value:'Utilities',},
+    {value:'Advertising',},
+    {value:'Equipment',},
+    {value:'Owner'},]
+  const [expenses, setExpenses] = useState([{ category: expenceCategory, description: '', amount: '' },]);
   const [opening, setOpening] = useState(100);
   const [invest, setInvest] = useState(0);
   const [dailySales, setDailySales] = useState(50);
@@ -65,7 +73,7 @@ export default function Finance() {
                 <ExpenseRow
                   key={index}
                   index={index}
-                  category={expense.category}
+                  category={expenceCategory}
                   description={expense.description}
                   amount={expense.amount}
                   onChange={handleInputChange}

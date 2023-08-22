@@ -10,16 +10,12 @@ export default function ExpenseRow({ index, category, description, amount, onCha
       <p className='input_layout2 w-12 text-center'>{index + 1}</p>
       <select
         className='select_layout'
-        value={category}
+        value={category.value}
         onChange={(e) => onChange(index, 'category', e.target.value)}
       >
-        <option value="Food">Food</option>
-        <option value="Labor">Labor</option>
-        <option value="Rent">Rent</option>
-        <option value="Utilities">Utilities</option>
-        <option value="Advertising">Advertising</option>
-        <option value="Equipment">Equipment</option>
-        <option value="Owner">Owner</option>
+        {category.map((cat, i)=>(
+          <option key={i} value={cat.value}>{cat.value}</option>
+        ))}
       </select>
       <input
         type='text'
