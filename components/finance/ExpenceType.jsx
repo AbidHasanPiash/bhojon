@@ -3,6 +3,28 @@ import React, { useState } from 'react'
 import { BiDownArrow} from 'react-icons/bi'
 import { HiPencilAlt, HiTrash, HiPlusCircle, HiSave } from 'react-icons/hi'
 
+export function TypeComp({value, index, onRemove}) {
+  const [isEditing, setIsEditing] = useState(false);
+  return(
+    <div className='grid grid-cols-6 p-2 rounded-xl border border-gray-200/50 dark:border-gray-700'>
+      <div className='col-span-4 flex space-x-2 w-full'>
+        <span>{index+1}.</span>
+        <form onSubmit={''} className='flex-wrap w-full'>
+          <input type="text" value={value.value} className='bg-transparent w-2/3'/>
+        </form>
+      </div>
+      <div className='col-span-2 flex items-center justify-end space-x-6'>
+        <span onClick={()=>setIsEditing((p)=>!p)} className={`${isEditing?'text-blue-500':'hover:text-blue-500'}  cursor-pointer`}>
+          {isEditing ? <HiSave/> : <HiPencilAlt/> }
+        </span>
+        <span className='hover:text-red-500 cursor-pointer'>
+          <HiTrash onClick={() => onRemove(index)}/>
+        </span>
+      </div>
+    </div>
+  )
+}
+
 export default function ExpenceType({values, setValues, onRemove}) {
     const [expand, setExpand] = useState(false);
     const [addEnable, setAddEnable] = useState(false);
@@ -13,8 +35,8 @@ export default function ExpenceType({values, setValues, onRemove}) {
         setNewExpenseType('');
         setValues(updatedValues);
       }
+      setNewExpenseType('');
       setAddEnable(false);
-      console.log('Saving expense types:', values);
     };
   return (
     <div className='container_layout2 space-y-6'>
@@ -31,16 +53,7 @@ export default function ExpenceType({values, setValues, onRemove}) {
       <div className={`space-y-6 ${expand?'block':'hidden lg:block'}`}>
         <div className='space-y-3'>
           {values.map((value, i)=>(
-            <div key={i} className='flex items-center justify-between p-2 rounded-xl border border-gray-200/50 dark:border-gray-700'>
-              <p className='flex space-x-2'>
-                <span>{i+1}.</span>
-                <span>{value.value}</span>
-              </p>
-              <div className='flex items-center justify-center space-x-6'>
-                <HiPencilAlt/>
-                <HiTrash onClick={() => onRemove(i)}/>
-              </div>
-            </div>
+            <TypeComp key={i} index={i} value={value} onRemove={onRemove}/>
           ))}
         </div>
         {/* Footer Section */}

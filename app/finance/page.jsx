@@ -57,10 +57,12 @@ export default function Finance() {
     setExpenceType([...expenceType, { value: value }]);
   };
   const handleRemoveExpenceType = (index) => {
-    const newType = [...expenceType];
-    newType.splice(index, 1);
-    setExpenceType(newType);
-  }
+    if (index !== 0) {
+      const newType = [...expenceType];
+      newType.splice(index, 1);
+      setExpenceType(newType);
+    }
+  };
   return (
     <div className='container_gap'>
       <div className='flex flex-col-reverse lg:grid grid-cols-4 gap-6 w-full'>

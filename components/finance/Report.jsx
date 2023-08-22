@@ -48,7 +48,7 @@ export default function Report() {
                     //displayFormat={"DD-MM-YYYY"}
                     minDate={new Date("2023/08/05")} 
                     maxDate={new Date(currentDate)}
-                    inputClassName="px-6 mr-8 outline-none p-0 bg-transparent text-gray-800 dark:text-gray-300 cursor-pointer select-none"   
+                    inputClassName="lg:px-6 lg:mr-8 outline-none bg-transparent text-gray-800 dark:text-gray-300 cursor-pointer select-none"   
                 />
             </span>
         </div>
