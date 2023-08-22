@@ -3,8 +3,19 @@ import React, { useState } from 'react'
 import { BiDownArrow} from 'react-icons/bi'
 import { HiPencilAlt, HiTrash, HiPlusCircle, HiSave } from 'react-icons/hi'
 
-export default function ExpenceType({values}) {
-    const [expand, setExpand] = useState(false)
+export default function ExpenceType({values, setValues, onRemove}) {
+    const [expand, setExpand] = useState(false);
+    const [addEnable, setAddEnable] = useState(false);
+    const [newExpenseType, setNewExpenseType] = useState('');  
+    const handleSaveExpenseTypes = () => {
+      if (newExpenseType.trim() !== '') {
+        const updatedValues = newExpenseType;
+        setNewExpenseType('');
+        setValues(updatedValues);
+      }
+      setAddEnable(false);
+      console.log('Saving expense types:', values);
+    };
   return (
     <div className='container_layout2 space-y-6'>
       {/* Header section */}
@@ -27,25 +38,34 @@ export default function ExpenceType({values}) {
               </p>
               <div className='flex items-center justify-center space-x-6'>
                 <HiPencilAlt/>
-                <HiTrash/>
+                <HiTrash onClick={() => onRemove(i)}/>
               </div>
             </div>
           ))}
         </div>
         {/* Footer Section */}
-        <div className='flex items-center justify-center space-x-3'>
-          <button className='btn_layout_text'>
-            <span className='btn_text'>
-              <HiPlusCircle size={22}/>
-              <span>Add</span>
-            </span>
-          </button>
-          <button className='btn_layout_text'>
-            <span className='btn_text'>
-              <HiSave size={22}/>
-              <span>Save</span>
-            </span>
-          </button>
+        <div className='space-y-6'>
+          <input
+            type='text'
+            placeholder='Add new expense type'
+            value={newExpenseType}
+            onChange={(e) => setNewExpenseType(e.target.value)}
+            className={`input_layout ${addEnable?'block':'hidden'}`}
+          />
+          <div className='flex items-center justify-center space-x-3'>
+            <button onClick={()=>setAddEnable(true)} className='btn_layout_text'>
+              <span className='btn_text'>
+                <HiPlusCircle size={22}/>
+                <span>Add</span>
+              </span>
+            </button>
+            <button onClick={handleSaveExpenseTypes} className='btn_layout_text'>
+              <span className='btn_text'>
+                <HiSave size={22}/>
+                <span>Save</span>
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

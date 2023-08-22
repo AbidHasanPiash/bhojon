@@ -2,18 +2,15 @@ import React from 'react'
 import { HiTrash } from 'react-icons/hi'
 
 export default function ExpenseRow({ index, type, description, amount, onChange, onRemove }) {
-  const handleAmountChange = (e) => {
-    onChange(index, 'amount', e.target.value);
-  };
   return (
     <div className='flex items-center space-x-2'>
       <p className='input_layout2 w-12 text-center'>{index + 1}</p>
       <select
         className='select_layout'
-        value={type.value}
+        value={type?.value}
         onChange={(e) => onChange(index, 'type', e.target.value)}
       >
-        {type.map((t, i)=>(
+        {type?.map((t, i)=>(
           <option key={i} value={t.value}>{t.value}</option>
         ))}
       </select>

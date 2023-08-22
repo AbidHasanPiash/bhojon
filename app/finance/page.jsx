@@ -8,20 +8,21 @@ import ExpenceType from '@/components/finance/ExpenceType';
 import Expence from '@/components/finance/Expence';
 
 export default function Finance() {
-  const expenceType = [
+  const [opening, setOpening] = useState(100);
+  const [invest, setInvest] = useState(0);
+  const [dailySales, setDailySales] = useState(50);
+  const [closing, setClosing] = useState(opening + dailySales);
+  const [totalExpenses, setTotalExpenses] = useState(0);
+  const [expenceType, setExpenceType] = useState([
     {value:'Food',},
     {value:'Labor',},
     {value:'Rent',},
     {value:'Utilities',},
     {value:'Advertising',},
     {value:'Equipment',},
-    {value:'Owner'},]
-  const [expenses, setExpenses] = useState([{ type: expenceType, description: '', amount: '' },]);
-  const [opening, setOpening] = useState(100);
-  const [invest, setInvest] = useState(0);
-  const [dailySales, setDailySales] = useState(50);
-  const [closing, setClosing] = useState(opening + dailySales);
-  const [totalExpenses, setTotalExpenses] = useState(0)
+    {value:'Owner'},]);
+  const [expenses, setExpenses] = useState([
+    { type: expenceType, description: '', amount: '' },]);
   // Operational functions
   const handleInputChange = (index, field, value) => {
     const newExpenses = [...expenses];
@@ -52,6 +53,14 @@ export default function Finance() {
       setInvest('');
     }
   };
+  const handleAddExpenceType = (value) => {
+    setExpenceType([...expenceType, { value: value }]);
+  };
+  const handleRemoveExpenceType = (index) => {
+    const newType = [...expenceType];
+    newType.splice(index, 1);
+    setExpenceType(newType);
+  }
   return (
     <div className='container_gap'>
       <div className='flex flex-col-reverse lg:grid grid-cols-4 gap-6 w-full'>
@@ -74,7 +83,10 @@ export default function Finance() {
             handleInvest={handleInvest} 
             dailySales={dailySales} 
             closing={closing}/>
-          <ExpenceType values= {expenceType}/>
+          <ExpenceType 
+            values= {expenceType}
+            onRemove= {handleRemoveExpenceType}
+            setValues={handleAddExpenceType}/>
         </div>
       </div>
     </div>
