@@ -22,7 +22,7 @@ export function TypeComp({value, index, onRemove, onUpdate}) {
               type="text" 
               value={editedType} 
               onChange={(e) => setEditedType(e.target.value)}
-              className='bg-transparent w-2/3 px-1.5 outline-none rounded ring-1 ring-blue-500'/>
+              className='bg-transparent w-2/3 px-1.5 outline-none rounded ring-1 ring-cyan-300'/>
           </form>
           :
           <p className='px-1.5'>{value.value}</p>
@@ -30,11 +30,11 @@ export function TypeComp({value, index, onRemove, onUpdate}) {
       </div>
       <div className='col-span-2 flex items-center justify-end space-x-6'>
         {isEditing ?
-          <span onClick={submitEditedValue} className={`${isEditing?'text-blue-500':'hover:text-blue-500'}  cursor-pointer`}>
+          <span onClick={submitEditedValue} className={`${isEditing?'text-cyan-300':'hover:text-cyan-300'}  cursor-pointer`}>
             <HiSave/>
           </span>
           :
-          <span onClick={()=>setIsEditing(true)} className={`${isEditing?'text-blue-500':'hover:text-blue-500'}  cursor-pointer`}>
+          <span onClick={()=>setIsEditing(true)} className={`${isEditing?'text-cyan-300':'hover:text-cyan-300'}  cursor-pointer`}>
             <HiPencilAlt/>
           </span>
         }
