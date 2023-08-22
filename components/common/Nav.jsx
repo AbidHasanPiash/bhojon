@@ -60,7 +60,7 @@ export default function nav() {
                 onClick={()=>setSidebarOpen(false)}
                 aria-label="dashboard"
                 className={`group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300 
-                  ${activeItem === item.link ? 'bg-gradient-to-r from-blue-500 to-transparent':' hover:bg-black/20'}`}
+                  ${activeItem === item.link ? 'bg-gradient-to-r from-cyan-500 to-transparent':' hover:bg-black/20'}`}
               >
                 {item.icon}
                 <span className={activeItem === item.link ? "text-white font-bold tracking-widest" : "group-hover:text-gray-700 dark:group-hover:text-gray-50"}>{item.name}</span>

@@ -28,6 +28,12 @@ export default function VirtualTables() {
       setTotalFreeTable(freeCount);
       setTotalBookedTable(bookedCount);
     }, [tables]);
+    const handleDelete = () => {
+        //delete
+    }
+    const handleAdd = () => {
+        //add
+    }
     return (
         <div className='lg:col-span-2 space-y-6 container_layout'>
             <div className='flex items-center justify-between text-xl'>
@@ -53,7 +59,7 @@ export default function VirtualTables() {
                 ))}
                 <button className='h-20 rounded-lg outline-dashed outline-cyan-300 dark:outline-cyan-700 overflow-hidden'>
                     <div className='h-2/3 text-3xl flex items-center justify-center text-cyan-300 dark:text-cyan-700'><HiPlusCircle/></div>
-                    <div className='h-1/3 bg-cyan-700 bg-opacity-10 outline-dashed outline-cyan-300 dark:outline-cyan-700 rounded px-4 py-1 text-center text-xs'>New</div>
+                    <div className='h-1/3 rounded-lg bg-cyan-500 bg-opacity-20 outline-dashed outline-cyan-300 dark:outline-cyan-700 px-4 py-1 text-center text-xs'>New</div>
                 </button>
             </div>
         </div>
