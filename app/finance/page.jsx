@@ -97,7 +97,7 @@ export default function Finance() {
         </div>
         <div className='space-y-6'>
           <Summary opening={opening} invest={invest} handleInvest={handleInvest} dailySales={dailySales} closing={closing}/>
-          <ExpenceCategory/>
+          <ExpenceCategory values= {expenceCategory}/>
         </div>
       </div>
     </div>
