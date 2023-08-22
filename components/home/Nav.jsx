@@ -2,21 +2,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from 'react';
+import useSystemTheme from '@/hooks/useSystemTheme'
 
 export default function Nav() {
-  const [systemTheme, setSystemTheme] = useState('dark');
-  useEffect(() => {
-    const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleThemeChange = (event) => {
-      setSystemTheme(event.matches ? 'dark' : 'light');
-    };
-    darkModeQuery.addEventListener('change', handleThemeChange);
-    return () => {
-      darkModeQuery.removeEventListener('change', handleThemeChange);
-    };
-  }, []);
+  const theme = useSystemTheme();
 
-  const imagePath = `/logos/rm_mini_${systemTheme === 'dark' ? 'light' : 'dark'}.png`;
+  const imagePath = `/logos/rm_mini_${theme === 'dark' ? 'light' : 'dark'}.png`;
 
   const [isOpen, setIsOpen] = useState(false);
   const hamburgerLine = `h-1 w-6 my-1 rounded-full bg-cyan-700 dark:bg-cyan-300 transition ease transform duration-300`;
