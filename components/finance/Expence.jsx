@@ -10,9 +10,9 @@ export default function Expence({expenses, expenceType, handleInputChange, handl
   return (
     <div className='container_layout2'>
       {/* Header */}
-      <div className='flex items-center space-x-6 text-xl font-bold md:text-3xl'>
+      <div className='lg:flex items-center justify-between space-y-3 lg:space-x-6 text-xl font-bold md:text-3xl'>
         <h1>Balance Inquiry.</h1>
-        <h1 className='input_layout2 w-fit text-center'>{currentDate}</h1>
+        <h1 className='input_layout lg:w-fit text-center'>{currentDate}</h1>
       </div>
       {/* Costing and liability */}
       <div className='modal_body_element space-y-2'>

@@ -1,11 +1,9 @@
 'use client'
 import { useState } from 'react';
-import ExpenseRow from '@/components/finance/ExpenseRow';
 import Report from '@/components/finance/Report';
 import Summary from '@/components/finance/Summary';
-import { HiPlusCircle, HiSave } from 'react-icons/hi';
-import ExpenceType from '@/components/finance/ExpenceType';
 import Expence from '@/components/finance/Expence';
+import ExpenceType from '@/components/finance/ExpenceType';
 
 export default function Finance() {
   const [opening, setOpening] = useState(100);

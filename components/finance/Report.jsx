@@ -37,9 +37,9 @@ export default function Report() {
   return (
     <div className="container_layout2 space-y-6">
         {/* Header */}
-        <div className='flex items-center justify-between space-x-6 text-xl font-bold md:text-3xl'>
+        <div className='lg:flex items-center justify-between space-y-3 lg:space-x-6 text-xl font-bold md:text-3xl'>
             <h1>Reports.</h1>
-            <span className="input_layout2 w-full lg:w-fit">
+            <div className="input_layout lg:w-fit">
                 <Datepicker value={selectedDate}
                     primaryColor={"cyan"}
                     placeholder={"Select date"}
@@ -50,7 +50,7 @@ export default function Report() {
                     maxDate={new Date(currentDate)}
                     inputClassName="lg:px-6 lg:mr-8 outline-none bg-transparent text-gray-800 dark:text-gray-300 cursor-pointer select-none"   
                 />
-            </span>
+            </div>
         </div>
         {/* Table */}
         <table class="table-fixed w-full">
