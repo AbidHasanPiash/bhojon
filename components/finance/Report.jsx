@@ -35,7 +35,7 @@ export default function Report() {
       );
     }
   return (
-    <div className="space-y-6">
+    <div className="container_layout2 space-y-6">
         {/* Header */}
         <div className='flex items-center justify-between space-x-6 text-xl font-bold md:text-3xl'>
             <h1>Reports.</h1>
@@ -58,11 +58,11 @@ export default function Report() {
               <tr className='bg-cyan-200 dark:bg-cyan-800'>
                 <th className='py-2 text-left pl-2 rounded-tl-lg w-16'>SN</th>
                 <th className='py-2 text-left'>Date</th>
-                <th className='py-2 text-left'>Opening</th>
-                <th className='py-2 text-left'>Sales</th>
-                <th className='py-2 text-left'>Expence</th>
-                <th className='py-2 text-left'>Closing</th>
-                <th className='py-2 text-left'>Remarks</th>
+                <th className='py-2 text-left hidden md:table-cell'>Opening</th>
+                <th className='py-2 text-left hidden md:table-cell'>Sales</th>
+                <th className='py-2 text-left hidden md:table-cell'>Expence</th>
+                <th className='py-2 text-left hidden md:table-cell'>Closing</th>
+                <th className='py-2 text-left hidden lg:table-cell'>Remarks</th>
                 <th className='py-2 text-left rounded-tr-lg'>Action</th>
               </tr>
             </thead>
