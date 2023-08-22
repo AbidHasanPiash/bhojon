@@ -3,12 +3,12 @@ import React, { useState } from 'react'
 import { BiDownArrow} from 'react-icons/bi'
 import { HiPencilAlt, HiTrash, HiPlusCircle, HiSave } from 'react-icons/hi'
 
-export default function ExpenceCategory({values}) {
+export default function ExpenceType({values}) {
     const [expand, setExpand] = useState(false)
   return (
     <div className='container_layout2 space-y-6'>
       <div className='flex items-center justify-between'>
-        <h1 className='text-xl font-bold md:text-3xl'>Category.</h1>
+        <h1 className='text-xl font-bold md:text-3xl'>Expence Type.</h1>
         <button onClick={()=>setExpand((p)=>!p)} className="btn_layout_icon lg:hidden">
           <span className={`${expand&&'rotate-180'} transition-all duration-300 btn_icon`}>
             <BiDownArrow size={22}/>

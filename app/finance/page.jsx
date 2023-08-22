@@ -4,7 +4,7 @@ import ExpenseRow from '@/components/finance/ExpenseRow';
 import Report from '@/components/finance/Report';
 import Summary from '@/components/finance/Summary';
 import { HiPlusCircle, HiSave } from 'react-icons/hi';
-import ExpenceCategory from '@/components/finance/ExpenceCategory';
+import ExpenceType from '@/components/finance/ExpenceType';
 
 export default function Finance() {
   // Date relate
@@ -12,7 +12,7 @@ export default function Finance() {
   const options = { day: 'numeric', month: 'short', year: 'numeric' };
   const currentDate = date.toLocaleString('en-US', options);
   // Calculation related
-  const expenceCategory = [
+  const expenceType = [
     {value:'Food',},
     {value:'Labor',},
     {value:'Rent',},
@@ -20,7 +20,7 @@ export default function Finance() {
     {value:'Advertising',},
     {value:'Equipment',},
     {value:'Owner'},]
-  const [expenses, setExpenses] = useState([{ category: expenceCategory, description: '', amount: '' },]);
+  const [expenses, setExpenses] = useState([{ type: expenceType, description: '', amount: '' },]);
   const [opening, setOpening] = useState(100);
   const [invest, setInvest] = useState(0);
   const [dailySales, setDailySales] = useState(50);
@@ -35,7 +35,7 @@ export default function Finance() {
   const handleAddInput = () => {
     const total = expenses.reduce((acc, expense) => acc + Number(expense.amount), 0);
     setTotalExpenses(total);
-    setExpenses([...expenses, { category: 'Food', description: '', amount: '' }]);
+    setExpenses([...expenses, { type: '', description: '', amount: '' }]);
   };
   const handleRemoveInput = (index) => {
     const newExpenses = [...expenses];
@@ -73,7 +73,7 @@ export default function Finance() {
                 <ExpenseRow
                   key={index}
                   index={index}
-                  category={expenceCategory}
+                  type={expenceType}
                   description={expense.description}
                   amount={expense.amount}
                   onChange={handleInputChange}
@@ -97,7 +97,7 @@ export default function Finance() {
         </div>
         <div className='space-y-6'>
           <Summary opening={opening} invest={invest} handleInvest={handleInvest} dailySales={dailySales} closing={closing}/>
-          <ExpenceCategory values= {expenceCategory}/>
+          <ExpenceType values= {expenceType}/>
         </div>
       </div>
     </div>

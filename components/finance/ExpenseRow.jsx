@@ -1,7 +1,7 @@
 import React from 'react'
 import { HiTrash } from 'react-icons/hi'
 
-export default function ExpenseRow({ index, category, description, amount, onChange, onRemove }) {
+export default function ExpenseRow({ index, type, description, amount, onChange, onRemove }) {
   const handleAmountChange = (e) => {
     onChange(index, 'amount', e.target.value);
   };
@@ -10,11 +10,11 @@ export default function ExpenseRow({ index, category, description, amount, onCha
       <p className='input_layout2 w-12 text-center'>{index + 1}</p>
       <select
         className='select_layout'
-        value={category.value}
-        onChange={(e) => onChange(index, 'category', e.target.value)}
+        value={type.value}
+        onChange={(e) => onChange(index, 'type', e.target.value)}
       >
-        {category.map((cat, i)=>(
-          <option key={i} value={cat.value}>{cat.value}</option>
+        {type.map((t, i)=>(
+          <option key={i} value={t.value}>{t.value}</option>
         ))}
       </select>
       <input

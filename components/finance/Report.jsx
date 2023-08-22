@@ -1,7 +1,7 @@
 'use client'
 import React, {useState} from "react"; 
 import Datepicker from "react-tailwindcss-datepicker"; 
-import TableRow from "./TableRow";
+import ReportRow from "./ReportRow";
 
 export default function Report() {
     // Date relate
@@ -10,21 +10,21 @@ export default function Report() {
     const [selectedDate, setSelectedDate] = useState({ startDate:null, endDate:null }); 
     const handleValueChange = (newValue) => {setSelectedDate(newValue);} 
     const [reports, setReports] = useState([
-      {id:1, date:'2023-08-19', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
-      {id:1, date:'2023-08-18', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
-      {id:1, date:'2023-08-17', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
-      {id:1, date:'2023-08-16', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
-      {id:1, date:'2023-08-15', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
-      {id:1, date:'2023-08-14', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
-      {id:1, date:'2023-08-13', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
-      {id:1, date:'2023-08-12', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
-      {id:1, date:'2023-08-11', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
-      {id:1, date:'2023-08-10', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
-      {id:1, date:'2023-08-09', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
-      {id:1, date:'2023-08-08', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
-      {id:1, date:'2023-08-07', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
-      {id:1, date:'2023-08-06', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
-      {id:1, date:'2023-08-05', opening: 500, sales:246, expence:180, closing:566, remarks:'N/A'},
+      {id:1, date:'2023-08-19', opening: 500, sales:246, expence:180, closing:566},
+      {id:1, date:'2023-08-18', opening: 500, sales:246, expence:180, closing:566},
+      {id:1, date:'2023-08-17', opening: 500, sales:246, expence:180, closing:566},
+      {id:1, date:'2023-08-16', opening: 500, sales:246, expence:180, closing:566},
+      {id:1, date:'2023-08-15', opening: 500, sales:246, expence:180, closing:566},
+      {id:1, date:'2023-08-14', opening: 500, sales:246, expence:180, closing:566},
+      {id:1, date:'2023-08-13', opening: 500, sales:246, expence:180, closing:566},
+      {id:1, date:'2023-08-12', opening: 500, sales:246, expence:180, closing:566},
+      {id:1, date:'2023-08-11', opening: 500, sales:246, expence:180, closing:566},
+      {id:1, date:'2023-08-10', opening: 500, sales:246, expence:180, closing:566},
+      {id:1, date:'2023-08-09', opening: 500, sales:246, expence:180, closing:566},
+      {id:1, date:'2023-08-08', opening: 500, sales:246, expence:180, closing:566},
+      {id:1, date:'2023-08-07', opening: 500, sales:246, expence:180, closing:566},
+      {id:1, date:'2023-08-06', opening: 500, sales:246, expence:180, closing:566},
+      {id:1, date:'2023-08-05', opening: 500, sales:246, expence:180, closing:566},
     ]);
     let filteredReports = reports;
     if (selectedDate.startDate !== null && selectedDate.endDate !== null) {
@@ -62,13 +62,12 @@ export default function Report() {
                 <th className='py-2 text-left hidden md:table-cell'>Sales</th>
                 <th className='py-2 text-left hidden md:table-cell'>Expence</th>
                 <th className='py-2 text-left hidden md:table-cell'>Closing</th>
-                <th className='py-2 text-left hidden lg:table-cell'>Remarks</th>
                 <th className='py-2 text-left rounded-tr-lg'>Action</th>
               </tr>
             </thead>
             <tbody>
               {filteredReports.map((order, index)=>(
-                <TableRow key={index} index={index} row={order} reports={reports}/>
+                <ReportRow key={index} index={index} row={order} reports={reports}/>
               ))}
             </tbody>
           </table>
