@@ -157,9 +157,8 @@ export default function Footer() {
                     </Link>
                     </li>
                     <li>
-                      <form action="">
+                      <form>
                         <label
-                          for="newsletter"
                           className="text-lg text-gray-700 dark:text-gray-200"
                         >
                           Subscribe to our newsletter

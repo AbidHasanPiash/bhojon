@@ -17,7 +17,7 @@ export default function Nav() {
         <div className="flex flex-wrap items-center justify-between py-3 gap-6 md:py-4 md:gap-0">
           <div className="w-full px-6 flex justify-between lg:w-max md:px-0 z-30">
             {/* Main LOGO */}
-            <Link href="#login" aria-label="logo" className="flex space-x-2 items-center">
+            <a href="#login" aria-label="logo" className="flex space-x-2 items-center">
               <Image
                 src={imagePath}
                 className="w-8 lg:w-12"
@@ -29,7 +29,7 @@ export default function Nav() {
                 Resto{" "}
                 <span className="text-cyan-700 dark:text-cyan-300">Man.</span>
               </span>
-            </Link>
+            </a>
             {/* Hamburger buttom */}
             <div className="flex items-center max-h-10">
               <button onClick={() => setIsOpen((p)=>!p)} className="lg:hidden flex flex-col h-6 w-12 justify-center items-center group" >
@@ -42,24 +42,24 @@ export default function Nav() {
             <div className="text-gray-600 lg:pr-4 w-full">
               <ul className="tracking-wide font-medium  text-sm flex flex-col gap-y-6 lg:gap-y-0 lg:flex-row w-full">
                 <li>
-                  <Link href="#why" onClick={() => isOpen && setIsOpen((p)=>!p)} className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
+                  <a href="#why" onClick={() => isOpen && setIsOpen((p)=>!p)} className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
                     <span>I've a restaurant</span>
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="#features" onClick={() => isOpen && setIsOpen((p)=>!p)} className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
+                  <a href="#features" onClick={() => isOpen && setIsOpen((p)=>!p)} className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
                     <span>Futures</span>
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="#price" onClick={() => isOpen && setIsOpen((p)=>!p)} className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
+                  <a href="#price" onClick={() => isOpen && setIsOpen((p)=>!p)} className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
                     <span>Price</span>
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="#contsct" onClick={() => isOpen && setIsOpen((p)=>!p)} className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
+                  <a href="#contsct" onClick={() => isOpen && setIsOpen((p)=>!p)} className="block md:px-4 transition dark:text-gray-300 dark:hover:text-cyan-300 hover:text-cyan-700">
                     <span>Contsct</span>
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>

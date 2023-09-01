@@ -16,6 +16,7 @@ export default function WhyRestoMan() {
             <div className="md:5/12 lg:w-1/2">
             <Image
                 src="/images/icon/pie.svg"
+                className="w-auto h-auto"
                 alt="image"
                 loading="lazy"
                 width="400"

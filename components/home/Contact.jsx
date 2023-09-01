@@ -18,6 +18,7 @@ export default function Contact() {
             </h2>
             <Image
               src="/images/common/contact.png"
+              className="w-auto h-auto"
               alt="image"
               loading="lazy"
               width="200"
@@ -36,10 +37,10 @@ export default function Contact() {
             <div className="divide-y space-y-4 divide-gray-100 dark:divide-gray-800">
             <form action="" className="mt-10 space-y-8 dark:text-white">
               <div className="relative before:absolute before:bottom-0 before:h-0.5 before:left-0 before:origin-right focus-within:before:origin-left before:right-0 before:scale-x-0 before:m-auto before:bg-amber-400 dark:before:bg-amber-500 focus-within:before:!scale-x-100 focus-within:invalid:before:bg-red-400 before:transition before:duration-300">
-                  <input id="" type="email" placeholder="Your email" className="w-full bg-transparent pb-3  border-b border-gray-300 dark:placeholder-gray-300 dark:border-gray-600 outline-none  invalid:border-red-500 transition"/>
+                  <input id="email" type="email" placeholder="Your email" className="w-full bg-transparent pb-3  border-b border-gray-300 dark:placeholder-gray-300 dark:border-gray-600 outline-none  invalid:border-red-500 transition"/>
               </div>
               <div className="w-full relative before:absolute before:bottom-0 before:h-0.5 before:left-0 before:origin-right focus-within:before:origin-left before:right-0 before:scale-x-0 before:m-auto before:bg-amber-400 dark:before:bg-amber-500 focus-within:before:!scale-x-100 focus-within:invalid:before:bg-red-400 before:transition before:duration-300">
-                  <input id="" type="Your password" placeholder="Your message" className="w-full bg-transparent pb-3  border-b border-gray-300 dark:placeholder-gray-300 dark:border-gray-600 outline-none  invalid:border-red-500 transition"/>
+                  <input id="" type="text" placeholder="Your message" className="w-full bg-transparent pb-3  border-b border-gray-300 dark:placeholder-gray-300 dark:border-gray-600 outline-none  invalid:border-red-500 transition"/>
               </div>
               <button className="w-fit rounded-full bg-amber-600 dark:bg-amber-300 h-11 flex items-center justify-center px-6 py-3 transition hover:bg-amber-600 focus:bg-amber-600 active:bg-amber-800">
                   <span className="text-base font-semibold text-white dark:text-gray-900">Send</span>

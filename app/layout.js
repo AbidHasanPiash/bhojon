@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   const path = usePathname();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   return (
-    <html lang="en">
+    <html className="scroll-smooth" lang="en">
       <head>
         <title>Resto Man.</title>
         

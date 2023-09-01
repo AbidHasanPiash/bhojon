@@ -89,7 +89,7 @@ export default function Testimonials() {
               <Swiper effect={"cards"} grabCursor={true} modules={[EffectCards]} className="w-60 h-96">
                 {Testimonial.map((t,i)=>(
                   <SwiperSlide key={i}>
-                    <TestimonialCard info={t} index={i}/>
+                    <TestimonialCard key={i} info={t} index={i}/>
                   </SwiperSlide>
                 ))}
               </Swiper>
