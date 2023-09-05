@@ -1,12 +1,13 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import useSystemTheme from '@/hooks/useSystemTheme'
+import { HiSun, HiMoon } from "react-icons/hi";
+import { HiComputerDesktop } from "react-icons/hi2";
 
 export default function Nav() {
   const theme = useSystemTheme();
-
   const imagePath = `/logos/rm_mini_${theme === 'dark' ? 'light' : 'dark'}.png`;
 
   const [isOpen, setIsOpen] = useState(false);
@@ -63,7 +64,11 @@ export default function Nav() {
                 </li>
               </ul>
             </div>
-
+            <div className="hidden items-center justify-center space-x-3 p-3 text-xl">
+              <HiSun/>
+              <HiMoon/>
+              <HiComputerDesktop/>
+            </div>
             <div  className="w-full min-w-max space-y-2 border-cyan-200 lg:space-y-0 sm:w-max lg:border-l-2 dark:lg:border-cyan-700 pl-4">
               <Link href={'/purchase'}>
                 <button
@@ -82,19 +87,4 @@ export default function Nav() {
       </div>
     </nav>
   );
-}
-export async function getStaticProps() {
-  let systemTheme = 'light'; // Default to light if unable to determine
-
-  if (typeof window !== 'undefined') {
-    const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    systemTheme = darkModeQuery.matches ? 'dark' : 'light';
-    console.log('Detected System Theme:', systemTheme);
-  }
-
-  return {
-    props: {
-      systemTheme,
-    },
-  };
 }
