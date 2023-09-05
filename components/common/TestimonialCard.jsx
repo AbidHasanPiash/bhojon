@@ -17,8 +17,8 @@ export default function TestimonialCard({info}) {
             <h1 className="font-bold">{info.name}</h1>
           </div>
           <div className="w-full h-full flex items-center justify-center relative">
-            <span className="text-3xl absolute top-6 left-4 text-fuchsia-700"><ImQuotesLeft/></span>
-            <h1 className="font-bold px-2 text-center"> {info.testimonial} </h1>
+            <span className="text-3xl absolute top-4 left-4 text-fuchsia-700"><ImQuotesLeft/></span>
+            <h1 className="font-bold px-2.5 text-center text-gray-200"> {info.testimonial} </h1>
             <span className="text-3xl absolute bottom-6 right-4 text-fuchsia-700 rotate-180"><ImQuotesLeft/></span>
           </div>
         </div>

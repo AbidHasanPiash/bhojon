@@ -7,7 +7,7 @@ export default function WhyRestoMan() {
     <section className="py-16">
         <div className="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-16">
             <h2 className="mt-4 text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
-                Why Resto Man.
+                Why Choose Resto Man?
             </h2>
             <p className='max-w-3xl mx-auto my-3 md:my-6 text-center text-gray-600 dark:text-gray-400'>
                 Experience the future of restaurant management with Resto Man - your digital solution for success.
