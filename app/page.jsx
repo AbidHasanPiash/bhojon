@@ -9,7 +9,7 @@ import Testimonials from "@/components/home/Testimonials";
 
 export default function Home() {
   return (
-    <div className="!scroll-smooth">
+    <div className="scroll-smooth">
       <Nav />
       <section id="login"> <Login /> </section>
       <section id="why"> <WhyRestoMan /> </section>

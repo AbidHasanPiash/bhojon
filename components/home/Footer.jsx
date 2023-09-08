@@ -9,13 +9,9 @@ export default function Footer() {
         <div className="container m-auto space-y-8 px-6 text-gray-600 dark:text-gray-300 md:px-12 lg:px-20">
           <div>
             <div className="mb-6 items-center justify-between gap-6 py-6 sm:flex md:mb-16 md:space-y-6 md:py-0">
-              <Image
-                width="100"
-                height="42"
-                src="/logos/rm_main.png"
-                alt="logo tailus"
-                className="w-32"
-              />
+              <a href={'/#login'}>
+                <Image width="100" height="42" src="/logos/rm_main.png" alt="logo tailus" className="w-32 grayscale hover:grayscale-0"/>
+              </a>
               <div className="mt-6 flex flex-col-reverse flex-wrap gap-6 sm:mt-0 sm:flex-row sm:items-center">
                 <div className="flex gap-6">
                   <a
@@ -157,9 +153,8 @@ export default function Footer() {
                     </Link>
                     </li>
                     <li>
-                      <form action="">
+                      <form>
                         <label
-                          for="newsletter"
                           className="text-lg text-gray-700 dark:text-gray-200"
                         >
                           Subscribe to our newsletter

@@ -14,8 +14,8 @@ export default function Testimonials() {
       id: 1, 
       name: 'Cynthia J. Watts', 
       img: '/images/user.jpg', 
-      restaurant: 'Caffe Daruchini', 
-      testimonial: 'Your favorite companies are our partners.',
+      restaurant: 'Cynthia\'s Pizzeria', 
+      testimonial: 'RestoMan streamlined Cynthia\'s Pizzeria. User-friendly and efficient, a must-have for restaurant owners.',
       star: 4,
       date: '04.06.23'
     },
@@ -23,8 +23,8 @@ export default function Testimonials() {
       id: 2, 
       name: 'Abid Hasan', 
       img: '/images/user.jpg', 
-      restaurant: 'Caffe Daruchini', 
-      testimonial: 'Your favorite companies are our partners.',
+      restaurant: 'Abid\'s Bistro', 
+      testimonial: 'RestoMan, a lifesaver for Abid\'s Bistro. Packed with features, exceptional support. Highly recommend it.',
       star: 5,
       date: '04.06.23'
     },
@@ -32,8 +32,8 @@ export default function Testimonials() {
       id: 3, 
       name: 'Sharmin Shila', 
       img: '/images/user.jpg', 
-      restaurant: 'Caffe Daruchini', 
-      testimonial: 'Your favorite companies are our partners.',
+      restaurant: 'Shila\'s Cafe', 
+      testimonial: 'RestoMan revolutionized Shila\'s Cafe. Fantastic reporting, easy to use. A must-have for restaurant owners.',
       star: 4,
       date: '04.06.23'
     },
@@ -41,8 +41,8 @@ export default function Testimonials() {
       id: 4, 
       name: 'Akib Hasan', 
       img: '/images/user.jpg', 
-      restaurant: 'Caffe Daruchini', 
-      testimonial: 'Your favorite companies are our partners.',
+      restaurant: 'Akib\'s Grill House', 
+      testimonial: 'Reliable RestoMan for Akib\'s Grill House. Simplifies orders, inventory. Satisfying performance.',
       star: 3,
       date: '04.06.23'
     },
@@ -50,12 +50,12 @@ export default function Testimonials() {
       id: 5, 
       name: 'Arifa Billah', 
       img: '/images/user.jpg', 
-      restaurant: 'Caffe Daruchini', 
-      testimonial: 'Your favorite companies are our partners.',
+      restaurant: 'Arifa\'s Fine Dining', 
+      testimonial: 'Efficiently manage with RestoMan. A solid choice for restaurant management. Appreciate ongoing support.',
       star: 3,
       date: '04.06.23'
     },
-  ]
+  ];
   const Client = [
     {logo: '/images/client/client1.png'},
     {logo: '/images/client/client2.png'},
@@ -86,10 +86,10 @@ export default function Testimonials() {
                 <span>What's our clients say</span>
                 <span className='text-cyan-700 dark:text-cyan-400'>.</span>
               </h1>
-              <Swiper effect={"cards"} grabCursor={true} modules={[EffectCards]} className="w-60 h-96">
+              <Swiper effect={"cards"} grabCursor={true} modules={[EffectCards]} className="w-[212.25px] h-[427.5px]">
                 {Testimonial.map((t,i)=>(
                   <SwiperSlide key={i}>
-                    <TestimonialCard info={t} index={i}/>
+                    <TestimonialCard key={i} info={t} index={i}/>
                   </SwiperSlide>
                 ))}
               </Swiper>
